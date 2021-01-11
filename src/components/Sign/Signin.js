@@ -147,16 +147,16 @@ const SignIn = (props) => {
             </Grid>
           </form>
        
-            {/* <Grid item>
+            <Grid item>
               <Button
-                variant="link"
+                variant="outlined"
                 color="secondary"
                 size="small"
                 onClick={()=>setOpenDialog(true)}
               >
                 Forgot Password
               </Button>
-            </Grid> */}
+            </Grid>
             <Grid item>
               {openDialog?<ForgotPassword open={openDialog} onClose={handleClose}/>:null}
             </Grid>
