@@ -1,0 +1,10 @@
+[
+  { "name": "Home", "link": "/home","activeIndex":0 },
+  { "name": "About Us", "link": "/about","activeIndex":1 },
+  { "name": "Tools", "link": "/tools","activeIndex":2 },
+  { "name": "Services & Solutions", "link": "/services-and-solutions","activeIndex":3 },
+  { "name": "Best Practices", "link": "/best-practices","activeIndex":4 },
+  { "name": "Stories", "link": "/stories" ,"activeIndex":5},
+  { "name": "FAQ", "link": "/faq","activeIndex":6 },
+  {"name":"Contact Us","link":"/contact","activeIndex":7}
+]

@@ -1,0 +1,26 @@
+[
+    {"title":"Assessment Toolkit",
+    "subtitle":"Starting point towards Integration modernization journey",
+"imageName":"assessment.jpg",
+"route":"/assessment-toolkit",
+"key":"assessment"
+},
+{"title":"Integration Patterns",
+    "subtitle":"A common, reusable set of industry patterns",
+"imageName":"patterns.jpg",
+"route":"/integration-patterns",
+"key":"integration"
+},
+{"title":"One Click Deployment",
+    "subtitle":"Single click solution to migrate and run your integration workloads inside containers across the platform of your choice",
+"imageName":"one-click.jpg",
+"route":"/one-click-deployment",
+"key":"oneclick"
+},
+{"title":"Multi Cloud Deployment",
+    "subtitle":"An agile hybrid way of managing integration workloads across vendor products",
+"imageName":"multicloud.jpg",
+"route":"/multi-cloud-deployment",
+"key"
+:"multicloud"}
+]
