@@ -1,5 +1,5 @@
 {
-  "name": "cp4i-jumpstart-frontend",
+  "name": "cp4i-jumpstart-frontend-v2",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://cp4i-jumpstart-backend-1.eu-gb.mybluemix.net/api/jumpstat/fetchUserDataJumpstart",
