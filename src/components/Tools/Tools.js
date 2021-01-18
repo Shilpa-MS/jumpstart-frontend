@@ -13,6 +13,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import tools from "./tools.json";
 import axios from "axios";
 import env from "../env";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   toolsContainer: {
@@ -42,8 +43,8 @@ const Tools = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const [data, setData] = useState({ });
-  const [loaded,setLoaded]=useState(false);
+  const [data, setData] = useState({});
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     axios.defaults.headers.post["Content-Type"] =
@@ -51,21 +52,21 @@ const Tools = (props) => {
     // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios
       .post(`${env}/fetchUserDataJumpstart`, {
-        email: props.email,
+        email: localStorage.getItem("email"),
       })
       .then((res) => {
         // console.log("Fetch response is ....", res);
         setData(res.data[0]);
-        console.log("Data is....", data);
-        setLoaded(true)
+        setLoaded(true);
       })
+
       .catch((err) => {
         console.error("Error in user data fetch..", err);
       });
 
-      return ()=>{
-        console.log("unmount tools")
-      }
+    return () => {
+      console.log("unmount tools");
+    };
   }, []);
 
   return (
@@ -158,7 +159,7 @@ const Tools = (props) => {
                             {tool.subtitle}
                           </Typography>
                         </CardContent>
-                      </CardActionArea>                      
+                      </CardActionArea>
                     </Card>
                   </Grid>
                 ))}
@@ -167,6 +168,22 @@ const Tools = (props) => {
       </Grid>
     </React.Fragment>
   );
+};
+
+Tools.propTypes = {
+  data: PropTypes.shape({
+    access: PropTypes.arrayOf(
+      PropTypes.shape({
+        jumpstart: PropTypes.bool,
+      }),
+      PropTypes.shape({
+        assessment: PropTypes.bool,
+      }),
+      PropTypes.shape({
+        integration: PropTypes.bool,
+      })
+    ),
+  }),
 };
 
 export default Tools;

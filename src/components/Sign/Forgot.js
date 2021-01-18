@@ -63,6 +63,7 @@ const ForgotPassword = (props) => {
       email: email,
       password: password.newPassword,
     };
+    console.log("Payload for pass change...",payload)
     axios
       .post(`${url}/UpdateUserPassword`, payload)
       .then((res) => {

@@ -56,7 +56,9 @@ function App() {
               />
               <PrivateRoute
                 path="/tools"
-                render={(props) => <Tools {...props} setValue={setValue} email={email} />}
+                render={(props) => 
+                  <Tools {...props} setValue={setValue} email={email} />
+                 }
               />
               <PrivateRoute
                 path="/services-and-solutions"

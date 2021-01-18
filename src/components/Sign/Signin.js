@@ -40,10 +40,7 @@ const SignIn = (props) => {
   const [openDialog,setOpenDialog]=useState(false);
 
   const handleSubmit = (event) => {
-    console.log("User details...", user);
     event.preventDefault();
-    const payload = user;
-    console.log("Url", url, "Payload", payload);
 
     axios
       .post(`${url}/authenticateJumpstart`, {
