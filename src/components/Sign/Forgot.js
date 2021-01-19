@@ -64,6 +64,9 @@ const ForgotPassword = (props) => {
       password: password.newPassword,
     };
     console.log("Payload for pass change...",payload)
+    axios.defaults.headers.post["Content-Type"] =
+    "application/json;charset=utf-8";
+  axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios
       .post(`${url}/UpdateUserPassword`, payload)
       .then((res) => {

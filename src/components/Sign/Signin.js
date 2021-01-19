@@ -39,9 +39,17 @@ const SignIn = (props) => {
   const [message, setMessage] = useState("");
   const [openDialog,setOpenDialog]=useState(false);
 
+  const validateForm=()=>{
+    if(user.email.length!==0&&user.password.length!==0)
+    return true
+    else return false
+
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
+if(validateForm())
     axios
       .post(`${url}/authenticateJumpstart`, {
         email: user.email,
@@ -121,6 +129,7 @@ const SignIn = (props) => {
                 label="Email"
                 color="secondary"
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
+                required
               />
             </Grid>
             <Grid item>
@@ -129,6 +138,7 @@ const SignIn = (props) => {
                 color="secondary"
                 type="password"
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
+                required
               />
             </Grid>
             <Grid item>
@@ -136,7 +146,7 @@ const SignIn = (props) => {
                 type="submit"
                 variant="contained"
                 color="secondary"
-                disabled={user.email.length === 0 || user.password.length === 0}
+                // disabled={user.email.length === 0 || user.password.length === 0}
                 size="small"
               >
                 Sign In
@@ -146,7 +156,7 @@ const SignIn = (props) => {
        
             <Grid item>
               <Button
-                variant="outlined"
+                variant="contained"
                 color="secondary"
                 size="small"
                 onClick={()=>setOpenDialog(true)}
@@ -168,3 +178,5 @@ const SignIn = (props) => {
 };
 
 export default withRouter(SignIn);
+
+

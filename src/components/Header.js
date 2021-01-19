@@ -202,7 +202,7 @@ const Header = (props) => {
                 props.history.push("/home");
               }}
             >
-              <img src="/logoTCS.png" alt="logo" className={classes.logo} />
+              <img src="/logoTCS.jpg" alt="logo" className={classes.logo} />
               <Typography className={classes.title}>
                 JUMPSTART pak for <br />
                 <span className={classes.text2}>INTEGRATION</span>
