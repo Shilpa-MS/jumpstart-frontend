@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
-import Patterns from './PatternsDownloads';
+import Patterns from './PatternsDownloads2';
 
 const useStyles = makeStyles((theme) => ({
   toolContainer: {

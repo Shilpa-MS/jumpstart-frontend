@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     height: "2rem",
-    width: "27rem",
+    width: "25rem",
+    fontSize: "0.7rem",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
       height: "2rem",
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   helperText:{
     color:theme.palette.common.pink,
+    fontSize:"0.7rem",
     [theme.breakpoints.down("sm")]:{
       fontSize:"0.6rem",
       textAlign:"center"
