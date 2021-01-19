@@ -87,7 +87,7 @@ const Header = (props) => {
         <AppBar className={classes.appbar}>
           <Toolbar>
             <Button className={classes.drawerIconContainer}>
-              <img src="/logoTCS.jpg" alt="logo" className={classes.logo} />
+              <img src="/favicon.ico" alt="TCS" className={classes.logo} />
               <Typography className={classes.title}>
                 JUMPSTART pak for <br />
                 <span className={classes.text2}>INTEGRATION</span>
