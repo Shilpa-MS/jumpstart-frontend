@@ -222,7 +222,7 @@ const Faq = () => {
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography variant="subtitle1" className={classes.question}>
-                What is Jumpstart kit?
+                Can we get IBM Cloud Pak for Integration environment as a part of Jumpstart?
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
