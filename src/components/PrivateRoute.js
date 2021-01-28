@@ -8,9 +8,34 @@ const  PrivateRoute = (props) => {
         else
         return false;
     }
-    const condition = validation();
 
-    return  condition ? (<Route  path={props.path}  exact={props.exact} render={props.render} />) : 
-        (<Redirect  to="/"  />);
+    const adminValidation=()=>{
+        if(localStorage.getItem("role")==="admin")
+        return true;
+        else
+        return false;
+    }
+    const condition = validation();
+    const adminCondition=adminValidation();
+
+   if(condition){
+       console.log("Pth is...",props.path)
+       if(props.path==="/admin"){
+           if(adminCondition)
+           return <Route  path={props.path}  exact={props.exact} render={props.render} />
+           else
+           return <Redirect  to="/home"  />
+       }
+       else{
+        return <Route  path={props.path}  exact={props.exact} render={props.render} />
+
+       }
+   }
+   else{
+       return  <Redirect  to="/"  />
+   }
+
+    // return  condition ? (<Route  path={props.path}  exact={props.exact} render={props.render} />) : 
+    //     (<Redirect  to="/"  />);
 };
 export  default  PrivateRoute;
