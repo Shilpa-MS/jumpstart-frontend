@@ -2,7 +2,6 @@
   "name": "cp4i-jumpstart-frontend-v2",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://cp4i-jumpstart-backend-1.eu-gb.mybluemix.net/api/jumpstat/fetchUserDataJumpstart",
   "dependencies": {
     "@material-ui/core": "^4.11.1",
     "@material-ui/icons": "^4.9.1",
@@ -13,6 +12,7 @@
     "axios": "^0.21.1",
     "cross-env": "^7.0.3",
     "fontfaceobserver": "^2.1.0",
+    "http-proxy-middleware": "^1.0.6",
     "notistack": "^1.0.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
