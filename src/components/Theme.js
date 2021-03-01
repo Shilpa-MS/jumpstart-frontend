@@ -1,9 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-// const fhirBlue="#1a237e";
 const jumpstartBlue="#3f51b5";
 const fhirRed="#ef5350";
-const fhirGreen="#26a69a";
 const jumpstartBlack="#212121";
 const jumpstartWhite="#fafafa";
 const jumpstartPink="#e91e63";
@@ -13,7 +11,6 @@ export default createMuiTheme({
       common:{
           blue:`${jumpstartBlue}`,
           red:`${fhirRed}`,
-          green:`${fhirGreen}`,
           black:`${jumpstartBlack}`,
           white:`${jumpstartWhite}`,
           pink:`${jumpstartPink}`

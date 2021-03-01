@@ -81,6 +81,8 @@ function ElevationScroll(props) {
 const Header = (props) => {
   const classes = useStyles();
 
+
+
   return (
     <React.Fragment>
       <ElevationScroll>
@@ -93,6 +95,7 @@ const Header = (props) => {
                 <span className={classes.text2}>INTEGRATION</span>
               </Typography>
             </Button>
+
           </Toolbar>
         </AppBar>
       </ElevationScroll>
