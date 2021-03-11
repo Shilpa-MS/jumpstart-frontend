@@ -30,6 +30,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 function App() {
   const [value, setValue] = useState(0);
   const email = localStorage.getItem("email");
+  const userLoggedIn=email?true:false;
 
   useEffect(() => {
     Fonts();
@@ -46,13 +47,14 @@ function App() {
         <SnackbarProvider>
           <BrowserRouter>
             <ThemeProvider theme={themeHeader}>
-              <Header value={value} setValue={setValue} />
+              {userLoggedIn?(<Header value={value} setValue={setValue} />):null}
+              
             </ThemeProvider>
             <Switch>
               <PrivateRoute
                 path="/home"
                 render={(props) => (
-                  <Home {...props} setValue={setValue} email={email} />
+                  <Home {...props} setValue={setValue}  />
                 )}
               />
               <PrivateRoute
@@ -62,7 +64,7 @@ function App() {
               <PrivateRoute
                 path="/tools"
                 render={(props) => (
-                  <Tools {...props} setValue={setValue} email={email} />
+                  <Tools {...props} setValue={setValue}  />
                 )}
               />
               <PrivateRoute
@@ -112,13 +114,13 @@ function App() {
                 exact
                 path="/"
                 component={() => (
-                  <ThemeProvider theme={themeHeader}>
-                    <HeaderLoggedOut>
+                  // <ThemeProvider theme={themeHeader}>
+                  //   <HeaderLoggedOut>
                       <ThemeProvider theme={theme}>
                         <LandingPage />
                       </ThemeProvider>
-                    </HeaderLoggedOut>
-                  </ThemeProvider>
+                  //   </HeaderLoggedOut>
+                  // </ThemeProvider>
                 )}
               />
             </Switch>
