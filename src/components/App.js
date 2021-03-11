@@ -1,6 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "./Theme";
+import themeHeader from "./Theme";
+import theme from "./Theme2";
 import Header from "./Header";
 import Home from "./Home/Home";
 import Tools from "./Tools/Tools";
@@ -9,18 +10,18 @@ import OneClick from "./Tools/OneClick";
 import IntegrationPatterns from "./Tools/IntegrationPatterns";
 import MultiCloud from "./Tools/MultiCloudDeployment";
 import About from "./About/About";
-import Services from './Services/ServicesAndSolutions';
-import BestPractices from './BestPractices/BestPractices';
-import Stories from './Stories/Stories';
-import FAQ from './FAQ/FAQ';
-import Contact from './Contact/Contact';
-import SignIn from './Sign/Signin';
-import HeaderLoggedOut from './HeaderLoggedOut';
-import Admin from './Admin/Admin';
-import PrivateRoute from './PrivateRoute';
+import Services from "./Services/ServicesAndSolutions";
+import BestPractices from "./BestPractices/BestPractices";
+import Stories from "./Stories/Stories";
+import FAQ from "./FAQ/FAQ";
+import Contact from "./Contact/Contact";
+import SignIn from "./Sign/Signin";
+import HeaderLoggedOut from "./HeaderLoggedOut";
+import Admin from "./Admin/Admin";
+import LandingPage from "./Sign/LandingPage";
+import PrivateRoute from "./PrivateRoute";
 
-import Fonts from '../Fonts';
-
+import Fonts from "../Fonts";
 
 import { SnackbarProvider } from "notistack";
 
@@ -28,27 +29,31 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   const [value, setValue] = useState(0);
-  const email=localStorage.getItem("email");
+  const email = localStorage.getItem("email");
 
-  useEffect(()=>{
+  useEffect(() => {
     Fonts();
 
-    const jssStyles=document.querySelector("#jss-server-side");
-    if(jssStyles){
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
-  },[])
+  }, []);
 
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <SnackbarProvider>
           <BrowserRouter>
-            <Header value={value} setValue={setValue} />
+            <ThemeProvider theme={themeHeader}>
+              <Header value={value} setValue={setValue} />
+            </ThemeProvider>
             <Switch>
               <PrivateRoute
                 path="/home"
-                render={(props) => <Home {...props} setValue={setValue} email={email} />}
+                render={(props) => (
+                  <Home {...props} setValue={setValue} email={email} />
+                )}
               />
               <PrivateRoute
                 path="/about"
@@ -56,9 +61,9 @@ function App() {
               />
               <PrivateRoute
                 path="/tools"
-                render={(props) => 
+                render={(props) => (
                   <Tools {...props} setValue={setValue} email={email} />
-                 }
+                )}
               />
               <PrivateRoute
                 path="/services-and-solutions"
@@ -66,18 +71,23 @@ function App() {
               />
               <PrivateRoute
                 path="/best-practices"
-                render={(props) => <BestPractices {...props} setValue={setValue} />}
+                render={(props) => (
+                  <BestPractices {...props} setValue={setValue} />
+                )}
               />
-              <PrivateRoute path="/stories" 
+              <PrivateRoute
+                path="/stories"
                 render={(props) => <Stories {...props} setValue={setValue} />}
-                />
+              />
 
-              <PrivateRoute path="/faq" 
+              <PrivateRoute
+                path="/faq"
                 render={(props) => <FAQ {...props} setValue={setValue} />}
-                />
-              <PrivateRoute path="/contact" 
+              />
+              <PrivateRoute
+                path="/contact"
                 render={(props) => <Contact {...props} setValue={setValue} />}
-                />
+              />
               <PrivateRoute
                 path="/assessment-toolkit"
                 render={() => <AssessmentToolkit />}
@@ -94,13 +104,22 @@ function App() {
                 path="/multi-cloud-deployment"
                 render={() => <MultiCloud />}
               />
-              <PrivateRoute path="/admin" 
+              <PrivateRoute
+                path="/admin"
                 render={(props) => <Admin {...props} setValue={setValue} />}
-                />
-               <Route
-               exact
+              />
+              <Route
+                exact
                 path="/"
-                component={() => <HeaderLoggedOut><SignIn /></HeaderLoggedOut>}
+                component={() => (
+                  <ThemeProvider theme={themeHeader}>
+                    <HeaderLoggedOut>
+                      <ThemeProvider theme={theme}>
+                        <LandingPage />
+                      </ThemeProvider>
+                    </HeaderLoggedOut>
+                  </ThemeProvider>
+                )}
               />
             </Switch>
           </BrowserRouter>

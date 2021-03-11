@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: "bold",
-    color: theme.palette.common.black,
+    color: theme.palette.common.white,
     marginLeft: "1em",
     fontSize: "1.1rem",
     [theme.breakpoints.down("md")]: {

@@ -6,8 +6,9 @@ import axios from "axios";
 import url from "../env";
 import { withRouter } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
-import bg from "./beis-card.png";
+import bg from "./beis-card.jpg";
 import ForgotPassword from './Forgot';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
