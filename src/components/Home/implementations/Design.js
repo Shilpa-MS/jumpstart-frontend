@@ -1,6 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {Grid,Typography,Button} from '@material-ui/core';
+import {Grid,Typography,Button,Breadcrumbs} from '@material-ui/core';
+import {Link} from 'react-router-dom';
 
 
 const useStyles=makeStyles(theme=>({
@@ -11,12 +12,29 @@ const useStyles=makeStyles(theme=>({
     button:{
         width:200,
         height:200
+    },
+    link:{
+        textDecoration:"none",
+        color:theme.palette.text.secondary,
+        
+    },
+    active:{
+        textDecoration:"none",
+        color:theme.palette.text.primary
+    },
+    breadcrumbs:{
+        margin:" 1em 0em -2em 3em",
     }
 }))
 
 const Design=()=>{
     const classes=useStyles();
     return(<React.Fragment>
+        <Breadcrumbs className={classes.breadcrumbs}>
+                <Link to="/home" className={classes.link}>Home</Link>
+                <Link to="/technical-implementation" className={classes.link}>Technical Implementation</Link>
+                <Link to="/design" className={classes.active}>Design</Link>
+                </Breadcrumbs>
         <Grid container className={classes.root} direction="column">
             <Grid item>
                 <Typography variant="h6" gutterBottom>

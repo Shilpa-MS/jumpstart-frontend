@@ -5,9 +5,8 @@ import Refactoring from "./Refactoring";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    // background:`url(${bg})`,
-    // backgroundRepeat:"no-repeat",
-    // backgroundSize:"cover",
+   flexGrow:1,
+   padding:'1em'
   },
 
   image: {

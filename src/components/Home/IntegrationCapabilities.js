@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Typography, Button,Breadcrumbs } from "@material-ui/core";
 import {Card,CardActionArea,CardContent} from '@material-ui/core';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,19 +12,35 @@ const useStyles = makeStyles((theme) => ({
   card:{
     width:240,
     background:theme.palette.common.blue,
-    color:"white"
+    color:"white",
+    height:100
 },
+link:{
+  textDecoration:"none",
+  color:theme.palette.text.secondary,        
+},
+active:{
+  textDecoration:"none",
+  color:theme.palette.text.primary
+},
+breadcrumbs:{
+  margin:" 1em 0em -2em 3em",
+}
 
 
 }));
-const TechnicalCapabilities = () => {
+const IntegrationCapabilities = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
+       <Breadcrumbs className={classes.breadcrumbs}>
+                <Link to="/home" className={classes.link}>Home</Link>
+                <Link to="/integration-capabilities" className={classes.active}>Integration Capabilities</Link>
+                </Breadcrumbs>
       <Grid container direction="column" className={classes.root}>
         <Grid item>
           <Typography variant="h6" gutterBottom>
-            Technical Capabilities
+          Integration Capabilities
           </Typography>
         </Grid>
         <Grid item container direction="column" className={classes.root}>
@@ -108,4 +125,4 @@ const TechnicalCapabilities = () => {
   );
 };
 
-export default TechnicalCapabilities;
+export default IntegrationCapabilities;

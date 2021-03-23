@@ -9,12 +9,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "justify",
   },
   button: {
-    height: "2rem",
-    width: "25rem",
+    height: "5em",
+    width: "34em",
     fontSize: "0.7rem",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
-      height: "2rem",
+      height: "5em",
       fontSize: "0.6rem",
     },
   },

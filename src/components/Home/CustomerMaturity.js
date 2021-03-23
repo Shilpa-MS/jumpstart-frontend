@@ -25,35 +25,34 @@ const useStyles=makeStyles(theme=>({
     }
 }))
 
-const Operations=()=>{
+const CustomerMaturity=()=>{
     const classes=useStyles();
     return(<React.Fragment>
-        <Breadcrumbs className={classes.breadcrumbs}>
+         <Breadcrumbs className={classes.breadcrumbs}>
                 <Link to="/home" className={classes.link}>Home</Link>
-                <Link to="/technical-implementation" className={classes.link}>Technical Implementation</Link>
-                <Link to="/operations" className={classes.active}>Operations</Link>
-                </Breadcrumbs>
+                <Link to="/customer-maturity" className={classes.active}>Customer Maturity</Link>
+                </Breadcrumbs> 
         <Grid container className={classes.root} direction="column">
             <Grid item>
                 <Typography variant="h6" gutterBottom>
-                    Operations
+                    Customer Maturity
                 </Typography>
             </Grid>
             <Grid item style={{marginTop:"3em"}}>
                 <Grid container direction="row" justify="space-evenly" alignItems="center">
                     <Grid item>
                         <Button variant="contained" color="primary" className={classes.button}>
-                            Next Gen Logging
+                            Legacy Integration<br/>(Late Majority)
                         </Button>
                     </Grid>
                     <Grid item>
                         <Button variant="contained" color="primary" className={classes.button}>
-                            Monitoring
+                            Early Adopters
                         </Button>
                     </Grid>
                     <Grid item>
                         <Button variant="contained" color="primary" className={classes.button}>
-                            API Based testing
+                            Non IBM Integration
                         </Button>
                     </Grid>
                    
@@ -64,4 +63,4 @@ const Operations=()=>{
     </React.Fragment>)
 }
 
-export default Operations;
+export default CustomerMaturity;

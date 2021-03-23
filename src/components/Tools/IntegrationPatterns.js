@@ -1,14 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography,Breadcrumbs } from "@material-ui/core";
+import {Link} from 'react-router-dom';
 import Patterns from './PatternsDownloads2';
 
 const useStyles = makeStyles((theme) => ({
   toolContainer: {
-    marginTop: "2em",
+    flexGrow:1,
+    padding:"3em"
   },
   assessmentText: {
-    margin: "0 1em",
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
       margin: 0,
@@ -27,12 +28,27 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  link:{
+    textDecoration:"none",
+    color:theme.palette.text.secondary,        
+  },
+  active:{
+    textDecoration:"none",
+    color:theme.palette.text.primary
+  },
+  breadcrumbs:{
+    margin:" 1em 0em -2em 3em",
+  }
 }));
 
 const IntegrationPatterns = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
+      <Breadcrumbs className={classes.breadcrumbs}>
+      <Link to="/tools" className={classes.link}>Tools</Link>
+      <Link to="/integration-patterns" className={classes.active}>Integration Patterns</Link>
+      </Breadcrumbs>
       <Grid container direction="column" className={classes.toolContainer}>
         <Grid item >
           <Typography variant="h4" gutterBottom className={classes.assessmentText}>
@@ -57,10 +73,11 @@ const IntegrationPatterns = () => {
          
          
         </Grid>
-        <Grid item style={{marginTop:"1em"}}>
-           <Patterns/>
+        <Grid item >      <Patterns/>
+
           </Grid>
       </Grid>
+
     </React.Fragment>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {Grid, Typography,Box} from '@material-ui/core';
+import {Grid, Typography,Box,Breadcrumbs} from '@material-ui/core';
 import {Card,CardMedia,CardActionArea,CardContent} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import design from './images/design.gif';
@@ -18,6 +18,17 @@ const useStyles=makeStyles(theme=>({
     },
     card:{
         width:240
+    },
+    link:{
+        textDecoration:"none",
+        color:theme.palette.text.secondary,        
+    },
+    active:{
+        textDecoration:"none",
+        color:theme.palette.text.primary
+    },
+    breadcrumbs:{
+        margin:" 1em 0em -2em 3em",
     }
 }));
 
@@ -25,6 +36,10 @@ const TechnicalImplementation=()=>{
     const classes=useStyles();
     return (
         <React.Fragment>
+            <Breadcrumbs className={classes.breadcrumbs}>
+                <Link to="/home" className={classes.link}>Home</Link>
+                <Link to="/technical-implementation" className={classes.active}>Technical Implementation</Link>
+                </Breadcrumbs> 
             <Grid container direction="column"className={classes.root} >
                 <Grid item>
                     <Typography variant="h6" gutterBottom>Technical Implementation</Typography>
@@ -35,7 +50,7 @@ const TechnicalImplementation=()=>{
                         <Box boxShadow={3} >
                         <Card className={classes.card} >
                         <CardActionArea  component={Link} to="/design">
-                            <CardMedia className={classes.media} image={design} title="Technical Capabilities"/>
+                            <CardMedia className={classes.media} image={design} title="Design"/>
                             <CardContent>
                                 <Typography variant="body1" align="center">Design</Typography>
                             </CardContent>
@@ -49,7 +64,7 @@ const TechnicalImplementation=()=>{
                     <Box boxShadow={3}>
                     <Card className={classes.card} >
                         <CardActionArea  component={Link} to="/operations">
-                            <CardMedia className={classes.media} image={operations} title="Technical Capabilities"/>
+                            <CardMedia className={classes.media} image={operations} title="Operations"/>
                             <CardContent>
                                 <Typography variant="body1" align="center">Operations</Typography>
                             </CardContent>
@@ -62,8 +77,8 @@ const TechnicalImplementation=()=>{
                 <Grid item>
                     <Box boxShadow={3}>
                     <Card className={classes.card}>
-                        <CardActionArea  component={Link} to="/design">
-                            <CardMedia className={classes.media} image={deploy} title="Technical Capabilities"/>
+                        <CardActionArea  component={Link} to="/deploy">
+                            <CardMedia className={classes.media} image={deploy} title="Deploy"/>
                             <CardContent>
                                 <Typography variant="body1" align="center">Deploy</Typography>
                             </CardContent>

@@ -4,7 +4,8 @@ import { Grid, Typography,Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   toolContainer: {
-    marginTop: "2em",
+    flexGrow:1,
+    padding:"3em"
   },
   assessmentText: {
     margin: "0 1em",

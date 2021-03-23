@@ -15,11 +15,12 @@ import BestPractices from "./BestPractices/BestPractices";
 import Stories from "./Stories/Stories";
 import FAQ from "./FAQ/FAQ";
 import Contact from "./Contact/Contact";
-import TechnicalCapabilities from "./Home/TechnicalCapabilities";
+import IntegrationCapabilities from "./Home/IntegrationCapabilities";
 import TechnicalImplementation from "./Home/TechnicalImplementation";
+import CustomerMaturity from "./Home/CustomerMaturity";
 import Design from './Home/implementations/Design';
 import Operations from './Home/implementations/Operations';
-import Deploy from './Home/implementations/Design';
+import Deploy from './Home/implementations/Deploy';
 
 import HeaderLoggedOut from "./HeaderLoggedOut";
 import Admin from "./Admin/Admin";
@@ -189,12 +190,12 @@ function App() {
                 </React.Fragment>}
               />
               <PrivateRoute
-                path="/technical-capabilities"
+                path="/integration-capabilities"
                 render={() =>  <React.Fragment>
                   <ThemeProvider theme={themeHeader}>
                     <Header value={value} setValue={setValue} />
                   </ThemeProvider>
-                  <TechnicalCapabilities  />
+                  <IntegrationCapabilities  />
                 </React.Fragment>}
               />
               <PrivateRoute
@@ -212,7 +213,7 @@ function App() {
                   <ThemeProvider theme={themeHeader}>
                     <Header value={value} setValue={setValue} />
                   </ThemeProvider>
-                  <TechnicalCapabilities  />
+                  <CustomerMaturity  />
                 </React.Fragment>}
               />
               <PrivateRoute
@@ -231,6 +232,15 @@ function App() {
                     <Header value={value} setValue={setValue} />
                   </ThemeProvider>
                   <Operations  />
+                </React.Fragment>}
+              />
+               <PrivateRoute
+                path="/deploy"
+                render={() =>  <React.Fragment>
+                  <ThemeProvider theme={themeHeader}>
+                    <Header value={value} setValue={setValue} />
+                  </ThemeProvider>
+                  <Deploy  />
                 </React.Fragment>}
               />
               <Route
