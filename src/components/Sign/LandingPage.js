@@ -130,6 +130,7 @@ const LandingPage = (props) => {
             type="email"
             fullWidth
             onChange={(e) => setUser({ ...user, email: e.target.value })}
+            required
           />
           <TextField
             id="password"
@@ -137,6 +138,7 @@ const LandingPage = (props) => {
             type="password"
             fullWidth
             onChange={(e) => setUser({ ...user, password: e.target.value })}
+            required
           />
         </DialogContent>
         <DialogActions>

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Assessment Toolkit",
+    "description":"Some dummy text. Have to replace later. Dummy text.",
+    "tags": {
+      "integrationCapabilities": [],
+
+      "technicalImplementation": {
+        "design": ["ipaas", "microservices", "api-proxy"],
+        "operations": [],
+        "deploy": ["containers"]
+      },
+      "customerMaturity": []
+    },
+    "route":"/assessment-toolkit"
+  },
+  {
+    "id": 2,
+    "title": "One Click Deployment",
+    "description":"Some dummy text. Have to replace later. Dummy text.",
+    "tags": {
+      "integrationCapabilities": [],
+      "technicalImplementation": {
+        "design": [],
+        "operations": [],
+        "deploy": ["containers"]
+      },
+      "customerMaturity": []
+    },
+    "route":"/one-click-deployment"
+
+  }
+]

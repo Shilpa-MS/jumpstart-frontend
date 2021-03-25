@@ -82,7 +82,8 @@ const AssessmentToolkit = () => {
             item
             container
             style={{ padding: "1rem" }}
-            justify={matchesSM ? "center" : "flex-start"}
+            justify={matchesSM ? "space-between" : "flex-start"}
+            alignItems="center"
           >
             <Button variant="outlined" color="secondary" onClick={handleRoute}>
               Go to Toolkit

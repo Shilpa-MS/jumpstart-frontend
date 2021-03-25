@@ -16,7 +16,7 @@ import Stories from "./Stories/Stories";
 import FAQ from "./FAQ/FAQ";
 import Contact from "./Contact/Contact";
 import IntegrationCapabilities from "./Home/IntegrationCapabilities";
-import TechnicalImplementation from "./Home/TechnicalImplementation";
+import TechnicalImplementation from "./Home/Implementation2";
 import CustomerMaturity from "./Home/CustomerMaturity";
 import Design from './Home/implementations/Design';
 import Operations from './Home/implementations/Operations';
