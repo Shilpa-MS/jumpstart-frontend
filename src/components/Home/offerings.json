@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Assessment Toolkit",
-    "description":"Some dummy text. Have to replace later. Dummy text.",
+    "description":"Starting point towards Integration modernization journey.",
     "tags": {
       "integrationCapabilities": [],
 
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "title": "One Click Deployment",
-    "description":"Some dummy text. Have to replace later. Dummy text.",
+    "description":"Single click solution to migrate and run your integration workloads inside containers across the platform of your choice.",
     "tags": {
       "integrationCapabilities": [],
       "technicalImplementation": {

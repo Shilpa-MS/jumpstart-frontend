@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "2em",
   },
   card: {
-    width: 240,
+    width: "15em",
+    height:"15em",
     // borderBottom: `0.1em solid ${theme.palette.common.blue}`,
     [theme.breakpoints.down("sm")]: {
       width: "100%",
