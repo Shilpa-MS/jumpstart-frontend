@@ -8,6 +8,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@material-ui/core";
+import {Select,MenuItem} from '@material-ui/core';
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Alert from "@material-ui/lab/Alert";
@@ -15,6 +16,9 @@ import UserPersona from "./UserPersona";
 import axios from "axios";
 import url from "../env";
 import { withRouter } from "react-router-dom";
+import { useSnackbar } from "notistack";
+import secQues from "./securityQuestions.json";
+
 
 const useStyles = makeStyles((theme) => ({
   banner: {
@@ -54,16 +58,120 @@ const useStyles = makeStyles((theme) => ({
 
 const LandingPage = (props) => {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
+
   const [openLogin, setOpenLogin] = useState(false);
   const [user, setUser] = useState({ email: "", password: "" });
   const [openAlert, setOpenAlert] = useState(false);
   const [message, setMessage] = useState("");
+
+
+  const [openSignup, setOpenSignup] = useState(false);
+
+
+
+  const [newUser, setNewUser] = useState({
+    username: "",
+    email: "",
+    companyname: "",
+    designation: "",
+    app_id: "11",
+    password: "",
+    securityfaq_one: "",
+    securityanswer_one: "",
+    securityfaq_two: "",
+    securityanswer_two: "",
+    user_type: "new",
+    status: "Yet to Start",
+    role: "user",
+    user_status: "pending",
+    access: [
+      { jumpstart: false },
+      { assessment: false },
+      { integration: false },
+      { oneclick: false },
+      { multicloud: false },
+    ],
+    comment: "",
+  });
+  const [quesOne, setQuesOne] = useState("");
+  const [quesTwo, setQuesTwo] = useState("");
+  const [emailHelper, setEmailHelper] = useState("");
+
+  const changeQuesOne = (e) => {
+    setQuesOne(e.target.value);
+    setNewUser({
+      ...newUser,
+      securityfaq_one: e.target.value,
+    });
+  };
+  const changeQuesTwo = (e) => {
+    setQuesTwo(e.target.value);
+    setNewUser({
+      ...newUser,
+      securityfaq_two: e.target.value,
+    });
+  };
+
+  const validateEmail = (e) => {
+    let emailPattern_tcs = /^[a-z0-9._%+-]+@tcs+[.]+com/.test(e.target.value);
+    let emailPattern_ibm = /^[a-z0-9._%+-]+@ibm+[.]+co+[.]+in/.test(
+      e.target.value
+    );
+    let emailPattern_ibm1 = /^[a-z0-9._%+-]+@in+[.]+ibm+[.]+com/.test(
+      e.target.value
+    );
+    const valid = emailPattern_tcs || emailPattern_ibm || emailPattern_ibm1;
+
+    if (!valid) {
+      setEmailHelper(true);
+    } else {
+      setEmailHelper(false);
+      setNewUser({ ...newUser, email: e.target.value });
+    }
+  };
+
+  const handleSubmitSignUp = (e) => {
+    e.preventDefault();
+    console.log("User details are...", user);
+    validateForm();
+
+    axios
+      .post(`${url}/fetchUserDataJumpstart`, { email: user.email })
+      .then((res) => {
+        console.log("Fetch data res...", res.data.length);
+        if (res.data.length === 0) {
+          axios
+            .post(`${url}/registerJumpstart`, user)
+            .then((res) => {
+              console.log("Registration result...", res);
+              enqueueSnackbar("Registered successfully!", {
+                variant: "success",
+              });
+            })
+            .catch((err) => console.error("Error in registration..", err));
+        } else {
+          alert("User already exists!");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+
+
+
   const handleOpenLogin = () => {
     setOpenLogin(true);
     console.log("Login state is..", openLogin);
   };
   const handleCloseLogin = () => {
     setOpenLogin(false);
+  };
+
+  const handleOpenSignup = () => {
+    setOpenSignup(true);
+  };
+  const handleCloseSignup = () => {
+    setOpenSignup(false);
   };
 
   const validateForm = () => {
@@ -154,6 +262,147 @@ const LandingPage = (props) => {
     </React.Fragment>
   );
 
+  const SignUp = (
+    <React.Fragment>
+      <Dialog open={openSignup} onClose={handleCloseSignup}>
+        <DialogTitle>
+          Sign Up
+          <IconButton className={classes.closeIcon} onClick={handleCloseSignup}>
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+         <Grid container direction="column">
+         <Grid item>
+            <TextField
+              label="First and Last Name"
+              color="secondary"
+              required
+              onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
+              size="small"
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Email"
+              color="secondary"
+              required
+              onChange={validateEmail}
+              size="small"
+
+            />
+            {emailHelper ? (
+              <Alert severity="error">
+                Email id should be xxxx@tcs.com or xxxx@ibm.co.in or
+                xxxx@in.ibm.com
+              </Alert>
+            ) : null}
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Company Name"
+              color="secondary"
+              required
+              onChange={(e) =>
+                setNewUser({ ...newUser, companyname: e.target.value })
+              }
+              size="small"
+
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Designation"
+              color="secondary"
+              required
+              size="small"
+              onChange={(e) =>
+                setNewUser({ ...newUser, designation: e.target.value })
+              }
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Password"
+              color="secondary"
+              type="password"
+              size="small"
+              required
+              onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+            />
+          </Grid>
+          <Grid item>
+            <Typography variant="subtitle1">Security Questions</Typography>
+          </Grid>
+          <Grid item>
+            <Select
+              className={classes.selectEmpty}
+              value={quesOne}
+              size="small"
+              onChange={changeQuesOne}
+              required
+            >
+              {secQues.map((ques, index) => (
+                <MenuItem key={`q1-${index}`} value={ques.question}>
+                  {ques.question}
+                </MenuItem>
+              ))}
+            </Select>
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Answer"
+              color="secondary"
+              type="password"
+              required
+              size="small"
+              onChange={(e) =>
+                setNewUser({ ...newUser, securityanswer_one: e.target.value })
+              }
+            />
+          </Grid>
+          <Grid item>
+            <Select
+              className={classes.selectEmpty}
+              value={quesTwo}
+              required
+              size="small"
+              onChange={changeQuesTwo}
+            >
+              {secQues.map((ques, index) => (
+                <MenuItem key={`q2-${index}`} value={ques.question}>
+                  {ques.question}
+                </MenuItem>
+              ))}
+            </Select>
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Answer"
+              color="secondary"
+              type="password"
+              size="small"
+              required
+              onChange={(e) =>
+                setNewUser({ ...newUser, securityanswer_two: e.target.value })
+              }
+            />
+          </Grid>
+         </Grid>
+        </DialogContent>
+        <DialogActions>
+          <Button color="primary" onClick={handleSubmitSignUp}>
+            SignUp
+          </Button>
+         
+        </DialogActions>
+        {openAlert ? <Alert severity="error">{message}</Alert> : null}
+      </Dialog>
+    </React.Fragment>
+  );
+
+  
+
   return (
     <React.Fragment>
       <div className={classes.banner}>
@@ -198,7 +447,10 @@ const LandingPage = (props) => {
                 </Button>
               </Grid>
               <Grid item>
-                <Button variant="contained" color="secondary" size="small">
+                <Button variant="contained" color="secondary" size="small"
+                                  onClick={handleOpenSignup}
+
+                >
                   Sign Up
                 </Button>
               </Grid>
@@ -208,6 +460,7 @@ const LandingPage = (props) => {
       </div>
       <UserPersona />
       {login}
+      {SignUp}
     </React.Fragment>
   );
 };
