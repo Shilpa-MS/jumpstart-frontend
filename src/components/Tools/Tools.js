@@ -17,8 +17,11 @@ import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   toolsContainer: {
-    height: "100%",
-    width: "100%",
+    flexGrow:1,
+    padding:"3em"
+  },
+  item:{
+    paddingTop:"1em"
   },
   specialText: {
     color: theme.palette.common.blue,
@@ -76,18 +79,16 @@ const Tools = (props) => {
           item
           md
           style={{
-            marginLeft: matchesSM ? 0 : "3em",
             textAlign: matchesSM ? "center" : undefined,
-            marginTop: "2em",
           }}
         >
           <Typography variant="h4" gutterBottom>
             Tools and Accelerators
           </Typography>
           <Typography variant="subtitle1">
-            Reusable assets for faster development and simplification
+            Reusable assets for faster development and simplification.
           </Typography>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" className={classes.item}>
             These Tools & Accelerators enables Organizations to Jump Start their
             journey to{" "}
             <span className={classes.specialText}>
@@ -96,15 +97,15 @@ const Tools = (props) => {
             by quickly upgrading/migrating to the latest Cloud Pak for
             Integration from the older version of the products in the target
             platform of their choice (Azure, AWS, GCP, IBM Cloud, Corporate Data
-            Centre).
+            Centre).<br></br>
           </Typography>
         </Grid>
-        <Grid item style={{ margin: matchesSM ? 0 : "3em" }}>
+        <Grid item className={classes.item}>
           <Grid container direction="row" spacing={2}>
             {loaded
               ? tools.map((tool, index) => (
-                  <Grid item sm>
-                    <Card>
+                  <Grid item sm key={`griditem-${index}`}>
+                    <Card key={`card-${index}`}>
                       <CardActionArea
                         component={Link}
                         to={tool.route}
@@ -139,8 +140,8 @@ const Tools = (props) => {
                   </Grid>
                 ))
               : tools.map((tool, index) => (
-                  <Grid item sm>
-                    <Card>
+                  <Grid item sm key={`item-${index}`}>
+                    <Card key={`card-${index}`}>
                       <CardActionArea
                         component={Link}
                         to={tool.route}

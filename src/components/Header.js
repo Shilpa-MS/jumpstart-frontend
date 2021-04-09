@@ -124,7 +124,6 @@ const Header = (props) => {
       <Drawer
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
-        onOpen={() => setOpenDrawer(true)}
         classes={{ paper: classes.drawer }}
       >
         <div className={classes.toolbarMargin} />

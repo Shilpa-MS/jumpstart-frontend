@@ -1,13 +1,14 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography ,Breadcrumbs} from "@material-ui/core";
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   toolContainer: {
-    marginTop: "2em",
+    flexGrow:1,
+    padding: "3em",
   },
   assessmentText: {
-    margin: "0 1em",
     textAlign: "justify",
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
@@ -16,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     marginTop: "1em",
-    marginLeft: "2em",
     height: "24em",
     [theme.breakpoints.down("md")]: {
       marginLeft: 0,
@@ -27,6 +27,17 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  link:{
+    textDecoration:"none",
+    color:theme.palette.text.secondary,        
+  },
+  active:{
+    textDecoration:"none",
+    color:theme.palette.text.primary
+  },
+  breadcrumbs:{
+    margin:" 1em 0em -2em 3em",
+  }
 }));
 
 const MultiCloud = () => {
@@ -35,6 +46,10 @@ const MultiCloud = () => {
   const matchesSM = theme.breakpoints.down("md");
   return (
     <React.Fragment>
+      <Breadcrumbs className={classes.breadcrumbs}>
+                <Link to="/tools" className={classes.link}>Tools</Link>
+                <Link to="/multi-cloud-deployment" className={classes.active}>Multi Cloud Deployment</Link>
+                </Breadcrumbs> 
       <Grid container direction="column" className={classes.toolContainer}>
         <Grid item className={classes.assessmentText}>
           <Typography variant="h4" gutterBottom>

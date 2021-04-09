@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
   card: {
     width: "15em",
     height:"15em",
-    // borderBottom: `0.1em solid ${theme.palette.common.blue}`,
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     position:"absolute",
     bottom:0,
     left:0,
-    background:theme.palette.common.green,
+    background:theme.palette.common.pink,
     color:"white",
     fontSize:"0.9rem",
     padding:"0.5em"
@@ -71,8 +70,8 @@ const Cards = (props) => {
         alignItems="center"
       >
         {props.offerings[props.offerings.length - 1].map((o) => (
-          <Grid item>
-            <Card key={o.id} className={classes.card}>
+          <Grid item key={`grid-${o.id}`}>
+            <Card key={`card-${o.id}`} className={classes.card}>
               <CardActionArea component={Link} to={o.route}>
                 <CardContent>
                   <Grid
@@ -108,14 +107,7 @@ const Cards = (props) => {
                              </div>
                             ) : null}
                        
-                            {o.tags.technicalImplementation.operations
-                              .length ? (
-                                <div className={classes.tagsOperation}>                                 
-                               <Typography variant="body1" className={classes.tagsOperation}>
-                             Operations
-                                 </Typography>                               
-                        </div>
-                            ) : null}
+                           
                         
                             {o.tags.technicalImplementation.deploy.length ? (
                              <div className={classes.tagsDeploy}>
@@ -126,11 +118,22 @@ const Cards = (props) => {
                             
                          </div>
                             ) : null}
+                            {o.tags.technicalImplementation.operations
+                              .length ? (
+                                <div className={classes.tagsOperation}>                                 
+                               <Typography variant="body1" className={classes.tagsOperation}>
+                             Operations
+                                 </Typography>                               
+                        </div>
+                            ) : null}
                       
                          
                   </Grid>
+                  
                 </CardContent>
+            
               </CardActionArea>
+              
             </Card>
           </Grid>
         ))}

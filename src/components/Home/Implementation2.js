@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Breadcrumbs, Switch } from "@material-ui/core";
+import { makeStyles,useTheme } from "@material-ui/core/styles";
+import { Grid, Typography, Breadcrumbs, Checkbox } from "@material-ui/core";
 import { FormGroup, FormControlLabel } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Cards from './Cards';
@@ -39,6 +39,8 @@ const useStyles = makeStyles((theme) => ({
 
 const TechnicalImplementation = () => {
   const classes = useStyles();
+  const theme=useTheme();
+  const matchesSM= theme.breakpoints.down("sm");
   const [switchState, setSwitchState] = useState({
     design: false,
     operations: false,
@@ -90,40 +92,43 @@ const TechnicalImplementation = () => {
           </Typography>
         </Grid>
         <Grid item>
-          <FormGroup row>
+          <FormGroup column style={{"position":matchesSM?"absolute":"fixed"}}>
             <FormControlLabel
               control={
-                <Switch
+                <Checkbox
                   checked={switchState.design}
                   onChange={(e)=>{setSwitchState({...switchState,design:e.target.checked})}}
                   name="design"
+                  size="small"
                 />
               }
               label="Design"
             />
             <FormControlLabel
               control={
-                <Switch
+                <Checkbox
                   checked={switchState.operations}
                   onChange={(e)=>{setSwitchState({...switchState,operations:e.target.checked})}}
                   name="operations"
+                  size="small"
                 />
               }
               label="Operations"
             />
             <FormControlLabel
               control={
-                <Switch
+                <Checkbox
                   checked={switchState.deploy}
                   onChange={(e)=>{setSwitchState({...switchState,deploy:e.target.checked})}}
                   name="deploy"
+                  size="small"
                 />
               }
               label="Deploy"
             />
           </FormGroup>
         </Grid>
-        <Grid item style={{marginTop:"2em"}}>
+        <Grid item style={{marginTop:matchesSM?"6em":0,marginRight:matchesSM?0:"6em"}}>
           <Grid container direction="column">
             
           </Grid>

@@ -4,10 +4,11 @@ import { makeStyles,useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   aboutContainer: {
-    margin: "2em 0 0 0",
+    flexGrow:1,
+    padding:"3em"
   },
   text: {
-    marginLeft: "1em",
+    paddingTop:"1em",
     [theme.breakpoints.down("sm")]: {
       marginLeft: "0",
       textAlign: "center",
@@ -45,12 +46,12 @@ const About = () => {
         className={classes.aboutContainer}
       >
         <Grid item>
-          <Typography variant="h4" gutterBottom className={classes.text}>
+          <Typography variant="h4"  >
             About Us
           </Typography>
         </Grid>
         <Grid item sm>
-          <Typography variant="subtitle1" className={classes.text} gutterBottom>
+          <Typography variant="subtitle1" className={classes.text} >
             A team of integration experts delivering ready to use solutions and
             accelerators.
           </Typography>
@@ -65,7 +66,7 @@ const About = () => {
             from developer, to designer to tech lead to Architect.
           </Typography>
         </Grid>
-        <Grid item>
+        <Grid item >
           <Typography variant="h6" className={classes.text}>
             Today's Integration Requirements
           </Typography>

@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
       margin: "2em 0em",
     },
   },
+  bolderText: {
+    fontWeight: 500,
+    fontSize: "1.1rem",
+    color:theme.palette.common.blue
+  },
 }));
 
 const Home2 = () => {
@@ -41,21 +46,21 @@ const Home2 = () => {
     <React.Fragment>
       <Grid container direction="column" className={classes.root}>
         <Grid item>
-          <Typography variant="body1" align="center" style={{fontWeight:300}}>
-            Some dummy text Some dummy textSome dummy textSome dummy textSome
-            dummy textSome dummy textSome dummy textSome dummy textSome dummy
-            textSome dummy textSome dummy textSome dummy textSome dummy textSome
-            dummy textSome dummy textSome dummy textSome dummy textSome dummy
-            textSome dummy textSome dummy textSome dummy textSome dummy textSome
-            dummy textSome dummy textSome dummy textSome dummy textSome dummy
-            textSome dummy textSome dummy textSome dummy textSome dummy text
-            Some dummy text Some dummy textSome dummy textSome dummy textSome
-            dummy textSome dummy textSome dummy textSome dummy textSome dummy
-            textSome dummy textSome dummy textSome dummy textSome dummy textSome
-            dummy textSome dummy textSome dummy textSome dummy textSome dummy
-            textSome dummy textSome dummy textSome dummy textSome dummy textSome
-            dummy textSome dummy textSome dummy textSome dummy textSome dummy
-            textSome dummy textSome dummy textSome dummy textSome dummy text
+          <Typography variant="body1" align="center" style={{fontWeight:300,fontSize:"1rem"}}>
+          Cutting-edge tools and solutions to accelerate your Integration
+              modernization journey. TCS’ Jumpstart kit for Integration
+              encompasses{" "}
+              <span className={classes.bolderText}>
+                IBM Cloud Pak ® for Integration{" "}
+              </span>
+              platform spread across different levers of integration including{" "}
+              <span className={classes.bolderText}> Cloud </span>Integration,{" "}
+              <span className={classes.bolderText}> API first </span>
+              strategy, Micro services, Containers, Hybrid Cloud and provides a
+              comprehensive offering resulting in{" "}
+              <span className={classes.bolderText}> simplification </span> and
+              <span className={classes.bolderText}> faster adoption </span> of
+              the platform.
           </Typography>
         </Grid>
         <Grid item style={{marginTop:"3em"}}>

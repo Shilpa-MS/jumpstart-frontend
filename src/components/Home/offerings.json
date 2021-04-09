@@ -30,5 +30,21 @@
     },
     "route":"/one-click-deployment"
 
+  },
+  {
+    "id": 3,
+    "title": "Reusable Business Dashboards",
+    "description":"Next Gen Logging.",
+    "tags": {
+      "integrationCapabilities": [],
+      "technicalImplementation": {
+        "design": [],
+        "operations": ["next-gen-logging"],
+        "deploy": []
+      },
+      "customerMaturity": []
+    },
+    "route":"/one-click-deployment"
+
   }
 ]

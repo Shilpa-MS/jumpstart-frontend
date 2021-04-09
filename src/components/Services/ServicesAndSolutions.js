@@ -1,11 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography,Button } from "@material-ui/core";
+import GetAppIcon from "@material-ui/icons/GetApp";
 
 const useStyles = makeStyles((theme) => ({
   toolContainer: {
     flexGrow:1,
-    padding:"3em"
+    padding:"3em",
+    [theme.breakpoints.down("sm")]:{
+      padding:"1.5em"
+    }
   },
   assessmentText: {
     margin: "0 1em",
@@ -28,6 +32,12 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  button:{
+    [theme.breakpoints.down("sm")]:{
+      "fontSize":"0.6rem"
+
+    }
+  }
 }));
 
 const Services = () => {
@@ -56,15 +66,12 @@ const Services = () => {
               and Architects to help the customers and account teams in
               modernization their integration journey.
             </Typography>
-            <Typography variant ="subtitle1" gutterBottom>To know more, click download.
-            <span>
-            <Button variant="outlined" color="secondary" size="small"
-            onClick={()=>handleClick("IBMFHIRServer_HL7ToFHIR_Solution.docx")}
-            >Download</Button>
+           
+           
 
-            </span>
-            </Typography>
+      
           </Grid>
+         
          
           
           <Grid item md>
@@ -74,7 +81,24 @@ const Services = () => {
               className={classes.image}
             />
           </Grid>
+         
         </Grid>
+        <Button variant="outlined" color="secondary" size="small" className={classes.button}
+            onClick={()=>handleClick("IBMFHIRServer_HL7ToFHIR_Solution.docx")}
+            > <GetAppIcon color="secondary"/>IBMFHIRServer_HL7ToFHIR_Solution</Button>
+       
+        <Button variant="outlined" color="secondary" size="small" className={classes.button}
+            onClick={()=>handleClick("MQ-Tekton-pipeline.zip")}
+            > <GetAppIcon color="secondary"/>MQ-Tekton-pipeline</Button>
+    
+       
+            
+             <Button variant="outlined" color="secondary" size="small" className={classes.button}
+            onClick={()=>handleClick("DP-Tekton-Pipeline.zip")}
+            > <GetAppIcon color="secondary"/>DP-Tekton-Pipeline</Button>
+             <Button variant="outlined" color="secondary" size="small" className={classes.button}
+            onClick={()=>handleClick("ace-tekton-pipeline.zip")}
+            > <GetAppIcon color="secondary"/>ace-tekton-pipeline</Button>
       </Grid>
     </React.Fragment>
   );

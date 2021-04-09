@@ -1,14 +1,15 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Typography, Button,Breadcrumbs } from "@material-ui/core";
 import ReactPlayer from "react-player";
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   toolContainer: {
-    marginTop: "2em",
+    flexGrow:1,
+    padding:"3em"
   },
   assessmentText: {
-    margin: "0 1em",
     textAlign: "justify",
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
@@ -26,6 +27,17 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  link:{
+    textDecoration:"none",
+    color:theme.palette.text.secondary,        
+  },
+  active:{
+    textDecoration:"none",
+    color:theme.palette.text.primary
+  },
+  breadcrumbs:{
+    margin:" 1em 0em -2em 3em",
+  }
 }));
 
 const AssessmentToolkit = () => {
@@ -37,6 +49,10 @@ const AssessmentToolkit = () => {
   }
   return (
     <React.Fragment>
+       <Breadcrumbs className={classes.breadcrumbs}>
+                <Link to="/tools" className={classes.link}>Tools</Link>
+                <Link to="/one-click-deployment" className={classes.active}>One Click Deployment</Link>
+                </Breadcrumbs> 
       <Grid container direction="column" className={classes.toolContainer}>
         <Grid item className={classes.assessmentText}>
           <Typography variant="h4" gutterBottom>
