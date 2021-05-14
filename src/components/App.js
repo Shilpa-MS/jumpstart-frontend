@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import themeHeader from "./Theme";
 import theme from "./Theme2";
+import themeLanding from "./ThemeLanding";
+
 import Header from "./Header";
 import Home from "./Home/Home2";
 import Tools from "./Tools/Tools";
@@ -24,7 +26,7 @@ import Deploy from './Home/implementations/Deploy';
 
 import HeaderLoggedOut from "./HeaderLoggedOut";
 import Admin from "./Admin/Admin";
-import LandingPage from "./Sign/LandingPage";
+import LandingPage from "./Sign/Home4";
 import PrivateRoute from "./PrivateRoute";
 
 import Fonts from "../Fonts";
@@ -246,8 +248,12 @@ function App() {
               <Route
                 exact
                 path="/"
-                component={LandingPage}
-              />
+                render={() =>  <React.Fragment>
+                  <ThemeProvider theme={themeLanding}>
+                   <LandingPage/>
+                   </ThemeProvider>
+                </React.Fragment>}/>
+              
             </Switch>
           </BrowserRouter>
         </SnackbarProvider>
