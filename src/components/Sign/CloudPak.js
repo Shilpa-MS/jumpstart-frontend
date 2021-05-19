@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import jumpstart from "./36596-the-woman-sitting-on-the-phone.gif";
+import jumpstart from "./slide1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   tile:{
     padding:"1em",
     width:"20em",
-    background:"#f5f5f5",
+    background:"#eeeeee",
     border:"2px solid white"
   },
   appHead:{
@@ -54,17 +54,20 @@ const Cloudpak = () => {
               >
                 What is Cloud Pak?
               </Typography>
-              <Typography variant="body1" style={{ marginTop: "1em" }}>
+              {/* <Typography variant="body1" style={{ marginTop: "1em" }}>
                 Watch this short video to find out more about IBM Cloud Paks in
                 just 2 minutes!
-              </Typography>
+              </Typography> */}
             </Grid>
-            <Grid item>
+            <Grid item md>
               <img src={jumpstart} className={classes.image} alt="Jumpstart" />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item style={{ background: "#f5f5f5" }} className={classes.root}>
+        <Grid item  style={{background:"black",padding:"2em"}}>
+          <Typography variant="h5" style={{color:"white"}}>Cloud Pak for Integration</Typography>
+        </Grid>
+        <Grid item  className={classes.root}>
           <Grid
             container
             direction="row"
@@ -96,6 +99,11 @@ const Cloudpak = () => {
             </Grid>
           </Grid>
         </Grid>
+        <Grid item style={{background:"black"}} className={classes.root}>
+        <Typography variant="body1" gutterBottom style={{color:"white",fontWeight:500}} align="left">
+                Modernize one aspect of integration — or all of them
+              </Typography>
+        </Grid>
         <Grid item>
           <Grid
             container
@@ -114,9 +122,7 @@ const Cloudpak = () => {
               </Typography>
             </Grid>
             <Grid item lg>
-              <Typography variant="h5" gutterBottom>
-                Modernize one aspect of integration — or all of them
-              </Typography>
+             
               <Typography variant="body1">
                 Explore what you can do with flexible AI-powered software
                 components for hybrid cloud.

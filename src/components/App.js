@@ -26,14 +26,16 @@ import Deploy from './Home/implementations/Deploy';
 
 import HeaderLoggedOut from "./HeaderLoggedOut";
 import Admin from "./Admin/Admin";
-import LandingPage from "./Sign/Home4";
+import LandingHeader from "./Sign/Home4";
 import PrivateRoute from "./PrivateRoute";
+import LandingContent from './Sign/HomeContent';
 
 import Fonts from "../Fonts";
 
 import { SnackbarProvider } from "notistack";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import HomeContent from "./Sign/HomeContent";
 
 function App() {
   const [value, setValue] = useState(0);
@@ -70,12 +72,15 @@ function App() {
                 </React.Fragment>
                 )}
               />
-              <PrivateRoute
+              <Route
                 path="/about"
                 render={(props) => (
                   <React.Fragment>
-                    <ThemeProvider theme={themeHeader}>
-                      <Header value={value} setValue={setValue} />
+                    <ThemeProvider theme={themeLanding}>
+                      {/* <Header value={value} setValue={setValue} /> */}
+                      <LandingHeader/>
+
+                   
                     </ThemeProvider>
                     <About {...props} setValue={setValue} />
                   </React.Fragment>
@@ -114,24 +119,24 @@ function App() {
                   </React.Fragment>
                 )}
               />
-              <PrivateRoute
+              <Route
                 path="/stories"
                 render={(props) => (
                   <React.Fragment>
-                    <ThemeProvider theme={themeHeader}>
-                      <Header value={value} setValue={setValue} />
+                    <ThemeProvider theme={themeLanding}>
+                      <LandingHeader value={value} setValue={setValue} />
                     </ThemeProvider>
                     <Stories {...props} setValue={setValue} />
                   </React.Fragment>
                 )}
               />
 
-              <PrivateRoute
+              <Route
                 path="/faq"
                 render={(props) => (
                   <React.Fragment>
-                    <ThemeProvider theme={themeHeader}>
-                      <Header value={value} setValue={setValue} />
+                    <ThemeProvider theme={themeLanding}>
+                      <LandingHeader value={value} setValue={setValue} />
                     </ThemeProvider>
                     <FAQ {...props} setValue={setValue} />
                   </React.Fragment>
@@ -250,7 +255,9 @@ function App() {
                 path="/"
                 render={() =>  <React.Fragment>
                   <ThemeProvider theme={themeLanding}>
-                   <LandingPage/>
+                   <LandingHeader>
+                     <HomeContent/>
+                   </LandingHeader>
                    </ThemeProvider>
                 </React.Fragment>}/>
               

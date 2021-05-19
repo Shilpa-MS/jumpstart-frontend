@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { AppBar, Toolbar, Grid } from "@material-ui/core";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Button } from "@material-ui/core";
+import { Typography, Button,Tooltip } from "@material-ui/core";
 import { Tab, Tabs } from "@material-ui/core";
 import { Menu, MenuItem } from "@material-ui/core";
-import Welcome from "./Welcome";
-import Cloudpak from "./CloudPak";
-import Jumpstart from "./Jumpstart";
-import UserPersona from "./UserPersona";
+
+import {Link} from 'react-router-dom';
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -41,7 +39,31 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 10,
     marginLeft: "25px",
   },
+  drawerIconContainer: {
+    textDecoration:"none",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
 }));
+
+
+
+const useStylesBootstrap = makeStyles((theme) => ({
+  arrow: {
+    color: theme.palette.common.black,
+  },
+  tooltip: {
+    backgroundColor: theme.palette.common.black,
+    fontSize:"0.8rem"
+  },
+}));
+
+function BootstrapTooltip(props) {
+  const classes = useStylesBootstrap();
+
+  return <Tooltip arrow classes={classes} {...props} />;
+}
 
 const Home = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -63,7 +85,8 @@ const Home = (props) => {
       <ElevationScroll>
         <AppBar color="primary" position="fixed">
           <Toolbar disableGutters>
-            <div className={classes.title}>
+            <Button className={classes.drawerIconContainer} component={Link} to="/">
+            <div className={classes.title} >
               <Typography variant="h6">
                 TCS Jumpstart Pak For
                 <span>
@@ -72,6 +95,8 @@ const Home = (props) => {
                 </span>
               </Typography>
             </div>
+            </Button>
+            
 
             <Button
               variant="contained"
@@ -93,10 +118,10 @@ const Home = (props) => {
                   handleClick(e);
                 }}
               />
-              <Tab label="About Us" className={classes.tab} />
+              <Tab label="About Us" className={classes.tab} component={Link} to="/about" />
               <Tab label="Resources" className={classes.tab} />
-              <Tab label="Stories" className={classes.tab} />
-              <Tab label="FAQ" className={classes.tab} />
+              <Tab label="Stories" className={classes.tab} component={Link} to="/stories" />
+              <Tab label="FAQ" className={classes.tab} component={Link} to="/faq"/>
               <Tab label="Contact Us" className={classes.tab} />
             </Tabs>
             <Menu
@@ -106,6 +131,7 @@ const Home = (props) => {
               onClose={handleClose}
               MenuListProps={{ onMouseLeave: handleClose }}
             >
+             
                <MenuItem onClick={handleClose} style={{ fontWeight: 500,textAlign:"center",fontSize:"1.1em" }}>
                     Features
                   </MenuItem>
@@ -119,10 +145,17 @@ const Home = (props) => {
                   <MenuItem onClick={handleClose} style={{ fontWeight: 500 }}>
                     Design
                   </MenuItem>
+                  <BootstrapTooltip title="IPAAS description something."  placement="left" arrow>
                   <MenuItem onClick={handleClose}>IPAAS</MenuItem>
-                  <MenuItem onClick={handleClose}>
+
+                </BootstrapTooltip>
+                <BootstrapTooltip title="Event Based description something."  placement="left" arrow>
+                <MenuItem onClick={handleClose}>
                     Event based Architecture
                   </MenuItem>
+
+                </BootstrapTooltip>
+                  
                   <MenuItem onClick={handleClose}>Microservices</MenuItem>
                   <MenuItem onClick={handleClose}>
                     Managed service mesh
@@ -148,9 +181,10 @@ const Home = (props) => {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
+      
 
       <Grid container direction="column" style={{ marginTop: "8em" }}>
-        <Grid item>
+        {/* <Grid item>
           <Welcome />
           <hr />
         </Grid>
@@ -163,7 +197,8 @@ const Home = (props) => {
         </Grid>
         <Grid item>
           <UserPersona />
-        </Grid>
+        </Grid> */}
+        {props.children}
       </Grid>
     </React.Fragment>
   );

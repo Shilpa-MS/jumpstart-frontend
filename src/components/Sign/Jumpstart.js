@@ -7,7 +7,8 @@ import jumpstart from './36596-the-woman-sitting-on-the-phone.gif'
 const useStyles=makeStyles(theme=>({
     root:{
         flexGrow:1,
-        padding:"3em"
+        padding:"3em",
+        background:"#eeeeee"
     },
     image:{
         width:"30em",
@@ -24,16 +25,16 @@ const Cloudpak=()=>{
                     <Typography variant="h2" gutterBottom style={{color:"black",lineHeight:"1.3em"}}>
                     What is Jumpstart?
                     </Typography>
-                    <Typography variant="body1" style={{marginTop:"1em"}} >
-                    Watch this short video to find out more about IBM Cloud Paks in just 2 minutes!
-                    </Typography>
+                   
+
                 </Grid>
-                <Grid item>
-                <img
-                src={jumpstart}
-                className={classes.image}
-                alt="Jumpstart"
-              />
+                <Grid item md>
+                <Typography variant="body1" style={{marginTop:"1em"}} gutterBottom>
+                    TCS Integration Jumpstart Kit is a common marketplace for all the offerings and solutions under one hood.
+                    </Typography>
+                    <Typography variant="body1"  >
+                    The kit helps the customers to quickly adapt and simplify their integration modernization journey using Cloud Pak for Integration. TCS Integration architects and experts are continuously building reusable solutions and assets to address Technology Challenges and to find means to enable business adopt Modern Integration Solutions in a Quick and Risk Free Manner. The services and solutions listed here are the outcome of series of discussions and brain storming sessions with industry leaders and Architects to help the customers and account teams in modernization their integration journey.
+                    </Typography>
                 </Grid>
 
             </Grid>
