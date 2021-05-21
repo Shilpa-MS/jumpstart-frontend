@@ -13,15 +13,19 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.blue,
     fontWeight: 500,
   },
+  root:{
+    flexGrow:1,
+    padding:"3em"
+  }
 }));
 
 const Faq = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Grid container direction="column">
+      <Grid container direction="column" className={classes.root}>
         <Grid item>
-          <Typography variant="h4" style={{marginTop:"1em",marginLeft:"1em",marginBottom:"2em"}}>General FAQ</Typography>
+          <Typography variant="h4" >General FAQ</Typography>
         </Grid>
         <Grid item>
           <Accordion>

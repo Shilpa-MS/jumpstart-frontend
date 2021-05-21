@@ -67,7 +67,7 @@ const UserPersona = () => {
           <Grid item xs={12}>
             <Typography
               variant="h4"
-              style={{ color: "#616161", textAlign: "center", fontWeight: 500 }}
+              style={{ color: "#eeeeee", textAlign: "center", fontWeight: 500 }}
             >
               Integration User Persona
             </Typography>

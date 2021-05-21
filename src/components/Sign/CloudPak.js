@@ -74,7 +74,7 @@ const Cloudpak = () => {
             alignItems="center"
             justify="space-evenly"
           >
-            <Grid item xs>
+            <Grid item xs >
               <Typography
                 variant="h6"
                 gutterBottom
@@ -83,7 +83,7 @@ const Cloudpak = () => {
                 Overview
               </Typography>
             </Grid>
-            <Grid item md>
+            <Grid item lg>
               <Typography variant="h5" gutterBottom>
                 Everything you need in a comprehensive cloud integration
                 solution
@@ -91,20 +91,20 @@ const Cloudpak = () => {
               <Typography variant="body1">
                 IBM Cloud Pak® for Integration helps deliver a new,
                 AI-accelerated approach that enables extended teams to meet
-                escalating demand, help reduce costs and increase operational
-                agility with capabilities including API management, application
+                escalating demand,<br/> help reduce costs and increase operational
+                agility with capabilities including API management,<br/> application
                 and data integration, messaging and events, high-speed transfer,
                 and end-to-end security.
               </Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item style={{background:"black"}} className={classes.root}>
-        <Typography variant="body1" gutterBottom style={{color:"white",fontWeight:500}} align="left">
-                Modernize one aspect of integration — or all of them
-              </Typography>
-        </Grid>
+      
+       
+        
         <Grid item>
+        <hr/>
+
           <Grid
             container
             className={classes.root}
@@ -122,6 +122,9 @@ const Cloudpak = () => {
               </Typography>
             </Grid>
             <Grid item lg>
+            <Typography variant="body1" gutterBottom style={{fontSize:"1.5em"}} align="left">
+                Modernize one aspect of integration — or all of them
+              </Typography>
              
               <Typography variant="body1">
                 Explore what you can do with flexible AI-powered software
@@ -157,7 +160,7 @@ const Cloudpak = () => {
                       <Typography variant="body1" className={classes.appDesc} gutterBottom>
                       Receive the information you need when you need it — once and once only.
                       </Typography>
-                      <a href="https://www.ibm.com/uk-en/cloud/api-connect" className={classes.link} target="_blank" rel="noreferrer noopener">IBM MQ</a>
+                      <a href="https://www.ibm.com/uk-en/products/mq" className={classes.link} target="_blank" rel="noreferrer noopener">IBM MQ</a>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -176,21 +179,21 @@ const Cloudpak = () => {
                       <Typography variant="body1" className={classes.appDesc} gutterBottom>
                       Build intelligent, responsive applications that react to events in real time.
                       </Typography>
-                      <a href="https://www.ibm.com/uk-en/cloud/api-connect" className={classes.link} target="_blank" rel="noreferrer noopener">IBM Event Streams</a>
+                      <a href="https://www.ibm.com/uk-en/cloud/event-streams" className={classes.link} target="_blank" rel="noreferrer noopener">IBM Event Streams</a>
                     </Grid>
                     <Grid item xs className={classes.tile}>
                       <Typography variant="body1" className={classes.appHead}>High-speed data transfer</Typography>
                       <Typography variant="body1" className={classes.appDesc}>
                       Move data of any size or volume around the world at maximum speed.
                       </Typography>
-                      <a href="https://www.ibm.com/uk-en/cloud/app-connect" className={classes.link} target="_blank" rel="noreferrer noopener">IBM Aspera</a>
+                      <a href="https://www.ibm.com/uk-en/products/aspera" className={classes.link} target="_blank" rel="noreferrer noopener">IBM Aspera</a>
                     </Grid>
                     <Grid item xs className={classes.tile}>
                       <Typography variant="body1" className={classes.appHead}gutterBottom>End-to-end security</Typography>
                       <Typography variant="body1" className={classes.appDesc} gutterBottom>
                       Create a persistent encrypted connection between environments.
                       </Typography>
-                      <a href="https://www.ibm.com/uk-en/cloud/api-connect" className={classes.link} target="_blank" rel="noreferrer noopener">IBM DataPower Gateway</a>
+                      <a href="https://www.ibm.com/uk-en/products/datapower-gateway" className={classes.link} target="_blank" rel="noreferrer noopener">IBM DataPower Gateway</a>
                     </Grid>
                   </Grid>
                 </Grid>
