@@ -83,7 +83,7 @@ const Cloudpak = () => {
                 Overview
               </Typography>
             </Grid>
-            <Grid item lg>
+            <Grid item md>
               <Typography variant="h5" gutterBottom>
                 Everything you need in a comprehensive cloud integration
                 solution
@@ -121,7 +121,7 @@ const Cloudpak = () => {
                 Capabilities
               </Typography>
             </Grid>
-            <Grid item lg>
+            <Grid item md>
             <Typography variant="body1" gutterBottom style={{fontSize:"1.5em"}} align="left">
                 Modernize one aspect of integration — or all of them
               </Typography>

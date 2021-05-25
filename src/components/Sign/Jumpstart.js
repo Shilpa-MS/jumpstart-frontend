@@ -26,11 +26,11 @@ const Cloudpak = () => {
         alignItems="center"
         justify="space-evenly"
       >
-        <Grid item xs>
+        <Grid item xs style={{padding:"2em 0"}}>
           <Typography
             variant="h2"
             gutterBottom
-            style={{ color: "black", lineHeight: "1.3em" }}
+            style={{ color: "black", lineHeight: "1.3em" ,paddingBottom:"0.8em"}}
           >
             What is Jumpstart?
           </Typography>

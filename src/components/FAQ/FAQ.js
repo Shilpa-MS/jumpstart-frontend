@@ -25,7 +25,7 @@ const Faq = () => {
     <React.Fragment>
       <Grid container direction="column" className={classes.root}>
         <Grid item>
-          <Typography variant="h4" >General FAQ</Typography>
+          <Typography variant="h4" gutterBottom>General FAQ</Typography>
         </Grid>
         <Grid item>
           <Accordion>
