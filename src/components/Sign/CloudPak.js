@@ -129,7 +129,21 @@ const Cloudpak = () => {
         </Grid>
 
         <Grid item>
-          <hr />
+          <Grid item>
+              <Grid container direction="row">
+                <Grid item style={{background:"black",width:"50%"}}>
+                <Typography
+                variant="body1"
+                gutterBottom
+                style={{ padding:"2em",color:"white" }}
+                align="left"
+              >
+                Modernize one aspect of integration — or all of them
+              </Typography>
+                </Grid>
+               
+              </Grid>
+            </Grid>
 
           <Grid
             container
@@ -147,15 +161,9 @@ const Cloudpak = () => {
                 Capabilities
               </Typography>
             </Grid>
+        
             <Grid item md>
-              <Typography
-                variant="body1"
-                gutterBottom
-                style={{ fontSize: "1.5em" }}
-                align="left"
-              >
-                Modernize one aspect of integration — or all of them
-              </Typography>
+             
 
               <Typography variant="body1">
                 Explore what you can do with flexible AI-powered software

@@ -46,5 +46,21 @@
     },
     "route":"/one-click-deployment"
 
+  },
+  {
+    "id": 4,
+    "title": "Industry Solutions",
+    "description":"Next Gen Logging.",
+    "tags": {
+      "integrationCapabilities": [],
+      "technicalImplementation": {
+        "design": ["fhir"],
+        "operations": [],
+        "deploy": ["fhir"]
+      },
+      "customerMaturity": []
+    },
+    "route":"/industry-solutions"
+
   }
 ]

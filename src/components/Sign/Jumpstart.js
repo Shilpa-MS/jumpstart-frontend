@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import jumpstart from "./36596-the-woman-sitting-on-the-phone.gif";
 
 const useStyles = makeStyles((theme) => ({
   root: {

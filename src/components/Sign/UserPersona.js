@@ -17,11 +17,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     height: "20em",
     position: "relative",
+    [theme.breakpoints.down("sm")]:{
+      height:"10em",
+      width:"100%",
+      padding:0
+    }
   },
 
   image: {
-    height: "15em",
-    width: "15em",
+    height: "75%",
+    width: "75%",
     margin: "5px auto 2px",
     display: "block",
   },
