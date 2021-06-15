@@ -100,9 +100,6 @@ const Home = (props) => {
 
 
   const [openSignup, setOpenSignup] = useState(false);
-
-
-
   const [newUser, setNewUser] = useState({
     username: "",
     email: "",
@@ -130,8 +127,33 @@ const Home = (props) => {
   const [quesOne, setQuesOne] = useState("");
   const [quesTwo, setQuesTwo] = useState("");
   const [emailHelper, setEmailHelper] = useState("");
+
+  const [alertDlg,setAlertDlg]=useState(false);
+
+  const handleAlertDlgOpen=()=>{
+    setAlertDlg(true)
+  }
+
+  const handleAlertDlgClose=()=>{
+    setAlertDlg(false);
+  }
   const classes = useStyles();
 
+  const loginAlert=(
+    <React.Fragment>
+      <Dialog open={alertDlg} onClose={handleAlertDlgClose}>
+      <IconButton className={classes.closeIcon} onClick={handleAlertDlgClose}>
+            <CloseIcon  fontSize="small"/>
+          </IconButton>
+          <DialogTitle>Alert!</DialogTitle>
+        <DialogContent>
+          <Typography variant="body1">
+            Please Login to use this feature!
+          </Typography>
+        </DialogContent>
+      </Dialog>
+    </React.Fragment>
+  )
 
   const changeQuesOne = (e) => {
     setQuesOne(e.target.value);
@@ -510,7 +532,7 @@ const Home = (props) => {
               MenuListProps={{ onMouseLeave: handleClose }}
             >
              
-               <MenuItem onClick={handleClose} style={{ fontWeight: 500,textAlign:"center",fontSize:"1.1em" }}>
+               <MenuItem onClick={handleAlertDlgOpen} style={{ fontWeight: 500,textAlign:"center",fontSize:"1.1em" }}>
                     Features
                   </MenuItem>
               <Grid
@@ -520,50 +542,50 @@ const Home = (props) => {
                 justify="space-evenly"
               >
                 <Grid item>
-                  <MenuItem onClick={handleClose} style={{ fontWeight: 500 }}>
+                  <MenuItem onClick={handleAlertDlgOpen} style={{ fontWeight: 500 }}>
                     Design
                   </MenuItem>
                   <BootstrapTooltip title="IPAAS description something."  placement="left" arrow>
-                  <MenuItem onClick={handleClose}>IPAAS</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>IPAAS</MenuItem>
 
                 </BootstrapTooltip>
                 <BootstrapTooltip title="Event Based description something."  placement="left" arrow>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleAlertDlgOpen}>
                     Event based Architecture
                   </MenuItem>
 
                 </BootstrapTooltip>
                   
-                  <MenuItem onClick={handleClose}>Microservices</MenuItem>
-                  <MenuItem onClick={handleClose}>
+                  <MenuItem onClick={handleAlertDlgOpen}>Microservices</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>
                     Industry Solutions
                   </MenuItem>
                 </Grid>
                 <Grid item>
-                  <MenuItem onClick={handleClose} style={{ fontWeight: 500 }}>
+                  <MenuItem onClick={handleAlertDlgOpen} style={{ fontWeight: 500 }}>
                     Operations
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>Next Gen Logging</MenuItem>
-                  <MenuItem onClick={handleClose}>Monitoring</MenuItem>
-                  <MenuItem onClick={handleClose}>AI Powered Testing</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>Next Gen Logging</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>Monitoring</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>AI Powered Testing</MenuItem>
                 </Grid>
                 <Grid item>
-                  <MenuItem onClick={handleClose} style={{ fontWeight: 500 }}>
+                  <MenuItem onClick={handleAlertDlgOpen} style={{ fontWeight: 500 }}>
                     Deploy
                   </MenuItem>
-                  <MenuItem onClick={handleClose}>Containers</MenuItem>
-                  <MenuItem onClick={handleClose}>Migration to Cloud</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>Containers</MenuItem>
+                  <MenuItem onClick={handleAlertDlgOpen}>Migration to Cloud</MenuItem>
                 </Grid>
               </Grid>
             </Menu>
           </Toolbar>
         </AppBar>
-      </ElevationScroll>
-      
+      </ElevationScroll>    
 
       <Grid container direction="column" style={{ marginTop: "8em" }}>
-      {login}
+     {login}
       {SignUp}
+      {loginAlert}
      
         {props.children}
       </Grid>

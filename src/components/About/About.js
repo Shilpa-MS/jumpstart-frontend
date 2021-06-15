@@ -1,14 +1,14 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
-import { makeStyles,useTheme } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   aboutContainer: {
-    flexGrow:1,
-    padding:"3em"
+    flexGrow: 1,
+    padding: "3em",
   },
   text: {
-    paddingTop:"1em",
+    paddingTop: "1em",
     [theme.breakpoints.down("sm")]: {
       marginLeft: "0",
       textAlign: "center",
@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
   image: {
     height: "20em",
     width: "40em",
-    [theme.breakpoints.down("sm")]:{
-        width:"100%",
-        height:"100%",
-        margin:0
-    }
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "100%",
+      margin: 0,
+    },
   },
   teamPhoto: {
     height: "10em",
@@ -35,23 +35,17 @@ const useStyles = makeStyles((theme) => ({
 
 const About = () => {
   const classes = useStyles();
-  const theme=useTheme();
-  const matchesSM=theme.breakpoints.down("sm");
+  const theme = useTheme();
+  const matchesSM = theme.breakpoints.down("sm");
 
   return (
     <React.Fragment>
-      <Grid
-        container
-        direction="column"
-        className={classes.aboutContainer}
-      >
+      <Grid container direction="column" className={classes.aboutContainer}>
         <Grid item>
-          <Typography variant="h4"  >
-            About Us
-          </Typography>
+          <Typography variant="h4">About Us</Typography>
         </Grid>
         <Grid item sm>
-          <Typography variant="subtitle1" className={classes.text} >
+          <Typography variant="subtitle1" className={classes.text}>
             A team of integration experts delivering ready to use solutions and
             accelerators.
           </Typography>
@@ -66,8 +60,12 @@ const About = () => {
             from developer, to designer to tech lead to Architect.
           </Typography>
         </Grid>
-        <Grid item >
-          <Typography variant="h6" className={classes.text}>
+        <Grid item>
+          <Typography
+            variant="h6"
+            className={classes.text}
+            style={{ paddingBottom: "1em" }}
+          >
             Today's Integration Requirements
           </Typography>
         </Grid>
@@ -79,50 +77,183 @@ const About = () => {
             variant="h6"
             className={classes.text}
             gutterBottom
+            style={{ paddingBottom: "1em" }}
           >
             Our Team
           </Typography>
         </Grid>
         <Grid item>
-          <Grid item container direction={matchesSM?"row":"column"} justify={matchesSM?"space-evenly":"undefined"}>
+          <Grid
+            item
+            container
+            direction={matchesSM ? "row" : "column"}
+            justify={matchesSM ? "space-evenly" : "undefined"}
+          >
             <Grid item>
-              <img
-                src="/about/mangesh1.jpg"
-                alt="Mangesh Potdar"
-                className={classes.teamPhoto}
-              />
-              <Typography variant="subtitle1" className={classes.teamText}>
-                <b>Mangesh Potdar</b>
-              </Typography>
-              <Typography variant="subtitle1" className={classes.teamText}>
-                Chief Architect
-              </Typography>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-evenly"
+              >
+                <Grid item>
+                  <img
+                    src="/about/mangesh1.jpg"
+                    alt="Mangesh"
+                    className={classes.teamPhoto}
+                  />
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    <b>Mangesh Potdar</b>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    Chief Architect
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item>
-              <img
-                src="/about/chris-photo.jpg"
-                alt="Chris Hembrom"
-                className={classes.teamPhoto}
-              />
-              <Typography variant="subtitle1" className={classes.teamText}>
-                <b>Chris Hembrom</b>
-              </Typography>
-              <Typography variant="subtitle1" className={classes.teamText}>
-                Integration & Cloud Architect
-              </Typography>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-evenly"
+              >
+                <Grid item>
+                  <img
+                    src="/about/chris-photo.jpg"
+                    alt="Chris"
+                    className={classes.teamPhoto}
+                  />
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    <b>Chris Hembrom</b>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    Integration and Cloud Architect
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item>
-              <img
-                src="/about/AkhilHada_PP.jpg"
-                alt="Akhil Hada"
-                className={classes.teamPhoto}
-              />
-              <Typography variant="subtitle1" className={classes.teamText}>
-                <b>Akhil Hada</b>
-              </Typography>
-              <Typography variant="subtitle1" className={classes.teamText}>
-                Enterprise Architect
-              </Typography>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-evenly"
+              >
+                <Grid item>
+                  <img
+                    src="/about/AkhilHada_PP.jpg"
+                    alt="Akhil"
+                    className={classes.teamPhoto}
+                  />
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    <b>Akhil Hada</b>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    Enterprise Architect
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid
+            item
+            container
+            direction={matchesSM ? "row" : "column"}
+            justify={matchesSM ? "space-evenly" : "undefined"}
+            alignItems="center"
+            style={matchesSM ? { paddingTop: "2em" } : undefined}
+          >
+            <Grid item>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-evenly"
+              >
+                <Grid item>
+                  <img
+                    src="/about/Santhosh.jpeg"
+                    alt="Santhosh R"
+                    className={classes.teamPhoto}
+                  />
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    <b>Santhosh R</b>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    Cloud Pak for Integration Architect
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item style={matchesSM ? { marginLeft: "-2em" } : undefined}>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-evenly"
+              >
+                <Grid item>
+                  <img
+                    src="/about/Vijay.jpg"
+                    alt="Vijay"
+                    className={classes.teamPhoto}
+                  />
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    <b>Vijay Ram Kumar Durairaj</b>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    Cloud Pak for Integration Architect
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="space-evenly"
+              >
+                <Grid item>
+                  <img
+                    src="/about/Shilpa.jpg"
+                    alt="Shilpa"
+                    className={classes.teamPhoto}
+                  />
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    <b>Shilpa M S</b>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" className={classes.teamText}>
+                    Developer
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

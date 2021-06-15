@@ -128,7 +128,11 @@ const IndustrySolutions = () => {
                       <MenuItem key="uc1" value="FHIR">
                         FHIR
                       </MenuItem>
+                      <MenuItem key="uc2" value="CDC">
+                        CDC
+                      </MenuItem>
                     </Select>
+                     
                   </span>
                 </Typography>
               </Grid>
@@ -197,6 +201,9 @@ const IndustrySolutions = () => {
                     <Select value={useCase} onChange={handleUseCaseChange}>
                       <MenuItem key="uc1" value="FHIR">
                         FHIR
+                      </MenuItem>
+                      <MenuItem key="uc2" value="CDC">
+                        CDC
                       </MenuItem>
                     </Select>
                   </span>
