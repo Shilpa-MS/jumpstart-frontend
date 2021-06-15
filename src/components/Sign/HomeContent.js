@@ -8,14 +8,16 @@ import UserPersona from './UserPersona';
 
 
 const useStyles=makeStyles(theme=>({
-
+root:{
+  flexGrow:1
+}
 }));
 
 const HomeContent=()=>{
     const classes=useStyles();
     return(
         <React.Fragment>
-            <Grid container direction="column" >
+            <Grid container direction="column" className={classes.root}>
         <Grid item>
           <Welcome />
          
@@ -24,11 +26,13 @@ const HomeContent=()=>{
           <Jumpstart />
      
         </Grid>
+       
       
         <Grid item>
+       
           <Cloudpak />
         </Grid>
-        <Grid item>
+        <Grid item style={{marginTop:"-30em"}}>
           <UserPersona />
         </Grid>
       </Grid>

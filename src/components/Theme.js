@@ -39,7 +39,7 @@ typography:{
     fontSize:"1.5rem",
     color:`${jumpstartBlue}`,
     fontWeight:700
-  },
+  }, 
   subtitle1:{
     color:`${jumpstartGrey}`,
     fontSize:"1rem",
@@ -70,6 +70,9 @@ typography:{
     fontSize:"2.25rem"
   },
   h6:{
+    color:`${jumpstartBlue}`
+  },
+  h5:{
     color:`${jumpstartBlue}`
   },
   

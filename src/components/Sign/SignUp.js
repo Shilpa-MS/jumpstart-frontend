@@ -9,7 +9,7 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-import secQues from "./securityQuestions.json";
+import secQues from "./data/securityQuestions.json";
 import axios from "axios";
 import url from "../env";
 import { useSnackbar } from "notistack";

@@ -74,6 +74,7 @@ typography:{
   h6:{
     color:`${jumpstartBlue}`
   },
+
   tab:{
     fontFamily:"Raleway",
         textTransform:"none",

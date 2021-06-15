@@ -1,7 +1,9 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import jumpstart from "./CloudPak1.gif";
+import jumpstart from "./media/CloudPak2.gif";
+import CapabilitiesCard from "./CapabilitiesCard";
+import capabilitiesJson from "./data/capabilities.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
   link: {
     fontFamily: "Roboto",
     color: theme.palette.common.blue,
+  },
+  blueText: {
+    color: theme.palette.common.blue,
+    fontWeight: 500,
   },
 }));
 
@@ -61,25 +67,26 @@ const Cloudpak = () => {
               <ul>
                 <li>
                   <Typography variant="body1" style={{ marginTop: "1em" }}>
-                    <b>ACCELERATE</b> innovation and efficiency to unlock immediate
-                    value
+                    <b>ACCELERATE</b> innovation and efficiency to unlock
+                    immediate value
                   </Typography>
                 </li>
                 <li>
                   <Typography variant="body1" style={{ marginTop: "1em" }}>
-                    <b>INTEGRATE</b> and connect applications, data, and services
-                    across multiple clouds
+                    <b>INTEGRATE</b> and connect applications, data, and
+                    services across multiple clouds
                   </Typography>
                 </li>
                 <li>
                   <Typography variant="body1" style={{ marginTop: "1em" }}>
-                    <b>MANAGE</b> applications intelligently across your environment
+                    <b>MANAGE</b> applications intelligently across your
+                    environment
                   </Typography>
                 </li>
                 <li>
                   <Typography variant="body1" style={{ marginTop: "1em" }}>
-                    <b>RUN</b> on Red Hat OpenShift, so you can build once and deploy
-                    anywhere
+                    <b>RUN</b> on Red Hat OpenShift, so you can build once and
+                    deploy anywhere
                   </Typography>
                 </li>
               </ul>
@@ -89,7 +96,8 @@ const Cloudpak = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item style={{ background: "black", padding: "2em" }}>
+
+        <Grid item style={{ padding: "2em", background: "black" }}>
           <Typography variant="h5" style={{ color: "white" }}>
             Cloud Pak for Integration
           </Typography>
@@ -111,17 +119,17 @@ const Cloudpak = () => {
               </Typography>
             </Grid>
             <Grid item md>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom style={{ color: "black",marginBottom:"1em",fontWeight:400 }}>
                 Everything you need in a comprehensive cloud integration
                 solution
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" align="justify">
                 IBM Cloud Pak® for Integration helps deliver a new,
                 AI-accelerated approach that enables extended teams to meet
                 escalating demand,
-                <br /> help reduce costs and increase operational agility with
+               help reduce costs and increase operational agility with
                 capabilities including API management,
-                <br /> application and data integration, messaging and events,
+                 application and data integration, messaging and events,
                 high-speed transfer, and end-to-end security.
               </Typography>
             </Grid>
@@ -130,20 +138,20 @@ const Cloudpak = () => {
 
         <Grid item>
           <Grid item>
-              <Grid container direction="row">
-                <Grid item style={{background:"black",width:"50%"}}>
+            <Grid container direction="row">
+              <Grid item style={{ width: "50%" }}>
                 <Typography
-                variant="body1"
-                gutterBottom
-                style={{ padding:"2em",color:"white" }}
-                align="left"
-              >
-                Modernize one aspect of integration — or all of them
-              </Typography>
-                </Grid>
-               
+                  variant="body1"
+                  gutterBottom
+                  style={{ padding: "2em" ,fontSize:"1.2rem"}}
+                  align="left"
+                  className={classes.blueText}
+                >
+                  Modernize one aspect of integration — or all of them
+                </Typography>
               </Grid>
             </Grid>
+          </Grid>
 
           <Grid
             container
@@ -161,169 +169,89 @@ const Cloudpak = () => {
                 Capabilities
               </Typography>
             </Grid>
-        
-            <Grid item md>
-             
 
+            <Grid item md>
               <Typography variant="body1">
                 Explore what you can do with flexible AI-powered software
                 components for hybrid cloud.
               </Typography>
-              <Grid container direction="column" style={{ marginTop: "2em" }}>
+              <Grid container direction="column" style={{ marginTop: "2em" }} spacing={2}>
                 <Grid item>
                   <Grid
                     container
                     direction="row"
-                    alignItems="flex-start"
                     justify="space-between"
-                    style={{ flexGrow: 1 }}
-                    spacing={5}
+                   
                   >
-                    <Grid item xs className={classes.tile}>
-                      <Typography
-                        variant="body1"
-                        className={classes.appHead}
-                        gutterBottom
-                      >
-                        API management
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        className={classes.appDesc}
-                        gutterBottom
-                      >
-                        Rapidly secure and manage your entire API ecosystem
-                        across multiple clouds.
-                      </Typography>
-                      <a
-                        href="https://www.ibm.com/uk-en/cloud/api-connect"
-                        className={classes.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        IBM API Connect
-                      </a>
+                    <Grid item  >
+                    <CapabilitiesCard
+                        title={capabilitiesJson[0].title}
+                        description={capabilitiesJson[0].desc}
+                        url={capabilitiesJson[0].url}
+                        link={capabilitiesJson[0].link}
+                      />
                     </Grid>
-                    <Grid item xs className={classes.tile}>
-                      <Typography variant="body1" className={classes.appHead}>
-                        Application integration
-                      </Typography>
-                      <Typography variant="body1" className={classes.appDesc}>
-                        Integrate applications and data no matter where they
-                        live.
-                      </Typography>
-                      <a
-                        href="https://www.ibm.com/uk-en/cloud/app-connect"
-                        className={classes.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        IBM App Connect
-                      </a>
-                    </Grid>
-                    <Grid item xs className={classes.tile}>
-                      <Typography
-                        variant="body1"
-                        className={classes.appHead}
-                        gutterBottom
-                      >
-                        Enterprise Messaging
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        className={classes.appDesc}
-                        gutterBottom
-                      >
-                        Receive the information you need when you need it — once
-                        and once only.
-                      </Typography>
-                      <a
-                        href="https://www.ibm.com/uk-en/products/mq"
-                        className={classes.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        IBM MQ
-                      </a>
-                    </Grid>
+                    <Grid item >
+                      <CapabilitiesCard
+                        title={capabilitiesJson[1].title}
+                        description={capabilitiesJson[1].desc}
+                        url={capabilitiesJson[1].url}
+                        link={capabilitiesJson[1].link}
+                      />                   
+                    </Grid>                   
                   </Grid>
                 </Grid>
 
                 <Grid item>
                   <Grid
                     container
-                    direction="row"
-                    alignItems="flex-start"
+                    direction="row"                  
                     justify="space-between"
-                    style={{ flexGrow: 1, marginTop: "1em" }}
-                    spacing={5}
+                  
+                    
                   >
-                    <Grid item xs className={classes.tile}>
-                      <Typography
-                        variant="body1"
-                        className={classes.appHead}
-                        gutterBottom
-                      >
-                        Event streaming
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        className={classes.appDesc}
-                        gutterBottom
-                      >
-                        Build intelligent, responsive applications that react to
-                        events in real time.
-                      </Typography>
-                      <a
-                        href="https://www.ibm.com/uk-en/cloud/event-streams"
-                        className={classes.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        IBM Event Streams
-                      </a>
+                     <Grid item  >
+                    <CapabilitiesCard
+                        title={capabilitiesJson[2].title}
+                        description={capabilitiesJson[2].desc}
+                        url={capabilitiesJson[2].url}
+                        link={capabilitiesJson[2].link}
+                      />
                     </Grid>
-                    <Grid item xs className={classes.tile}>
-                      <Typography variant="body1" className={classes.appHead}>
-                        High-speed data transfer
-                      </Typography>
-                      <Typography variant="body1" className={classes.appDesc}>
-                        Move data of any size or volume around the world at
-                        maximum speed.
-                      </Typography>
-                      <a
-                        href="https://www.ibm.com/uk-en/products/aspera"
-                        className={classes.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        IBM Aspera
-                      </a>
+                    <Grid item  >
+                    <CapabilitiesCard
+                        title={capabilitiesJson[3].title}
+                        description={capabilitiesJson[3].desc}
+                        url={capabilitiesJson[3].url}
+                        link={capabilitiesJson[3].link}
+                      />
                     </Grid>
-                    <Grid item xs className={classes.tile}>
-                      <Typography
-                        variant="body1"
-                        className={classes.appHead}
-                        gutterBottom
-                      >
-                        End-to-end security
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        className={classes.appDesc}
-                        gutterBottom
-                      >
-                        Create a persistent encrypted connection between
-                        environments.
-                      </Typography>
-                      <a
-                        href="https://www.ibm.com/uk-en/products/datapower-gateway"
-                        className={classes.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        IBM DataPower Gateway
-                      </a>
+                   
+                  </Grid>
+                </Grid>
+                <Grid item>
+                <Grid
+                    container
+                    direction="row"                  
+                    justify="space-between"
+                  
+                    
+                  >
+                  <Grid item  >
+                    <CapabilitiesCard
+                        title={capabilitiesJson[4].title}
+                        description={capabilitiesJson[4].desc}
+                        url={capabilitiesJson[4].url}
+                        link={capabilitiesJson[4].link}
+                      />
+                    </Grid>
+                    <Grid item  >
+                    <CapabilitiesCard
+                        title={capabilitiesJson[5].title}
+                        description={capabilitiesJson[5].desc}
+                        url={capabilitiesJson[5].url}
+                        link={capabilitiesJson[5].link}
+                      />
                     </Grid>
                   </Grid>
                 </Grid>

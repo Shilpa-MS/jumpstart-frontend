@@ -1,0 +1,39 @@
+[
+    {
+        "title":"API management",
+        "desc":"Rapidly secure and manage your entire API ecosystem across multiple clouds.",
+        "link":"IBM API Connect",
+        "url":"https://www.ibm.com/uk-en/cloud/api-connect"
+    },
+    {
+        "title":"Application integration",
+        "desc":"Integrate applications and data no matter where they live.",
+        "link":"IBM App Connect",
+        "url":"https://www.ibm.com/uk-en/cloud/app-connect"
+    },
+    {
+        "title":"Enterprise Messaging",
+        "desc":"Receive the information you need when you need it — once and once only.",
+        "link":"IBM MQ",
+        "url":"https://www.ibm.com/uk-en/products/mq"
+    },
+
+    {
+        "title":"Event streaming",
+        "desc":"Build intelligent, responsive applications that react to events in real time.",
+        "link":"IBM Event Streams",
+        "url":"https://www.ibm.com/uk-en/cloud/event-streams"
+    },
+    {
+        "title":"High-speed data transfer",
+        "desc":"Move data of any size or volume around the world at maximum speed.",
+        "link":"IBM Aspera",
+        "url":"https://www.ibm.com/uk-en/products/aspera"
+    },
+    {
+        "title":"End-to-end security",
+        "desc":"Create a persistent encrypted connection between environments.",
+        "link":"IBM DataPower Gateway",
+        "url":"https://www.ibm.com/uk-en/products/datapower-gateway"
+    }
+]

@@ -17,7 +17,7 @@ import axios from "axios";
 import url from "../env";
 import { withRouter } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import secQues from "./securityQuestions.json";
+import secQues from "./data/securityQuestions.json";
 
 
 const useStyles = makeStyles((theme) => ({

@@ -7,6 +7,7 @@ const jumpstartWhite="#ffffff";
 // const jumpstartPink="#e91e63";
 const jumpstartGrey="#h6h6h6";
 const jumpstartPink="#B53F51";
+const lightBlue ="#E7E9F6"
 
 export default createMuiTheme({
   palette:{
@@ -15,7 +16,8 @@ export default createMuiTheme({
           red:`${fhirRed}`,
           black:`${jumpstartBlack}`,
           white:`${jumpstartWhite}`,
-          pink:`${jumpstartPink}`
+          pink:`${jumpstartPink}`,
+          lightBlue:`${lightBlue}`
       },
       primary:{
           main:`${jumpstartWhite}`,
@@ -72,6 +74,10 @@ typography:{
   h6:{
     color:`${jumpstartBlue}`
   },
+  h5:{
+    color:`${jumpstartBlue}`
+  },
+
   
 }
 

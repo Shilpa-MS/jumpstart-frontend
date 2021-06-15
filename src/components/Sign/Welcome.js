@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid,Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-import jumpstart from './6853-cloud-animation.gif'
+import jumpstart from './media/6853-cloud-animation.gif'
 
 
 const useStyles=makeStyles(theme=>({

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import automator from "./46525-automation.gif";
-import integrator from "./14153-integrations.gif";
-import developer from "./41504-developer-is-programming-using-notebook.gif";
+import automator from "./media/46525-automation.gif";
+import integrator from "./media/14153-integrations.gif";
+import developer from "./media/41504-developer-is-programming-using-notebook.gif";
 import ReactCardFlip from "react-card-flip";
 
 const useStyles = makeStyles((theme) => ({

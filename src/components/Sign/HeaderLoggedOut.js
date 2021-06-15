@@ -19,7 +19,7 @@ import axios from "axios";
 import url from "../env";
 import { withRouter } from "react-router-dom";
 import { useSnackbar } from "notistack";
-import secQues from "./securityQuestions.json";
+import secQues from "./data/securityQuestions.json";
 
 
 import {Link} from 'react-router-dom';
@@ -536,7 +536,7 @@ const Home = (props) => {
                   
                   <MenuItem onClick={handleClose}>Microservices</MenuItem>
                   <MenuItem onClick={handleClose}>
-                    Managed service mesh
+                    Industry Solutions
                   </MenuItem>
                 </Grid>
                 <Grid item>
