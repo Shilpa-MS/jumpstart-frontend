@@ -115,67 +115,9 @@ const About = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item>
-              <Grid
-                container
-                direction="column"
-                alignItems="center"
-                justify="space-evenly"
-              >
-                <Grid item>
-                  <img
-                    src="/about/chris-photo.jpg"
-                    alt="Chris"
-                    className={classes.teamPhoto}
-                  />
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1" className={classes.teamText}>
-                    <b>Chris Hembrom</b>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1" className={classes.teamText}>
-                    Integration and Cloud Architect
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                direction="column"
-                alignItems="center"
-                justify="space-evenly"
-              >
-                <Grid item>
-                  <img
-                    src="/about/AkhilHada_PP.jpg"
-                    alt="Akhil"
-                    className={classes.teamPhoto}
-                  />
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1" className={classes.teamText}>
-                    <b>Akhil Hada</b>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1" className={classes.teamText}>
-                    Enterprise Architect
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid
-            item
-            container
-            direction={matchesSM ? "row" : "column"}
-            justify={matchesSM ? "space-evenly" : "undefined"}
-            alignItems="center"
-            style={matchesSM ? { paddingTop: "2em" } : undefined}
-          >
+           
+         
+         
             <Grid item>
               <Grid
                 container

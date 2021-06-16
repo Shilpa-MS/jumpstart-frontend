@@ -3,8 +3,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Grid,Typography,Breadcrumbs} from '@material-ui/core';
 import {Card,CardActionArea,CardContent,CardMedia} from '@material-ui/core';
 import {Link} from 'react-router-dom';
-import containers from '../images/containers2.jpg';
-import migrate from '../images/migrate.jpg';
+import containers from './images/containers2.jpg';
+import migrate from './images/migrate.jpg';
+
 
 
 const useStyles=makeStyles(theme=>({

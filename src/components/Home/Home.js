@@ -1,42 +1,126 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
-import Description from './Desc';
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardContent,
+  CardActionArea,
+  CardMedia,
+} from "@material-ui/core";
+import customer from "./images/customer.jpg";
+import capabilities from "./images/technicalCapabilities.jpg";
+import implementation from "./images/technicalImplementation.jpg";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    position: "relative",
-    // color: theme.palette.common.white,
-    backgroundColor:"#f5f5f5"
+  root: {
+    flexGrow: 1,
+    // marginTop: "5em",
+    [theme.breakpoints.down("sm")]: {
+      padding: "3em",
+      margin: 0,
+    },
+    padding:"3em"
   },
-  topLeft: {
-    position: "absolute",
-    top: "1rem",
-    left: "16px",
-    fontWeight:300,
-    // background:"linear-gradient(to right, #212121, #4e342e,#6d4c41)",
-
-    background:"linear-gradient(to right, #ffffff, #b0bec5,#607d8b)",
-    WebkitTextFillColor:"transparent",
-    WebkitBackgroundClip:"text"
+  media: {
+    height: 140,
+  },
+  card: {
+    width: 300,
+    [theme.breakpoints.down("sm")]: {
+      margin: "2em 0em",
+    },
+  },
+  bolderText: {
+    fontWeight: 500,
+    fontSize: "1.1rem",
+    color:theme.palette.common.blue
   },
 }));
 
-const Home = (props) => {
+const Home = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const matchesSM = theme.breakpoints.down("sm");
   return (
     <React.Fragment>
-      <div className={classes.container}>
-       
-        <img
-          src="/home/images/integration2.jpeg"
-          alt="TCS cover"
-          style={{ width: "100%",height:"30rem" }}
-        />
-        <Typography className={classes.topLeft} variant="h2">YOUR INTEGRATION<br/>PARTNER</Typography>
-        <Description setValue={props.setValue} />
-
-      </div>
+      <Grid container direction="column" className={classes.root}>
+        <Grid item>
+          <Typography variant="body1" align="center" style={{fontWeight:300,fontSize:"1rem"}}>
+          Cutting-edge tools and solutions to accelerate your Integration
+              modernization journey. TCS’ Jumpstart kit for Integration
+              encompasses{" "}
+              <span className={classes.bolderText}>
+                IBM Cloud Pak ® for Integration{" "}
+              </span>
+              platform spread across different levers of integration including{" "}
+              <span className={classes.bolderText}> Cloud </span>Integration,{" "}
+              <span className={classes.bolderText}> API first </span>
+              strategy, Micro services, Containers, Hybrid Cloud and provides a
+              comprehensive offering resulting in{" "}
+              <span className={classes.bolderText}> simplification </span> and
+              <span className={classes.bolderText}> faster adoption </span> of
+              the platform.
+          </Typography>
+        </Grid>
+        <Grid item style={{marginTop:"3em"}}>
+          <Grid
+            container
+            direction={matchesSM ? "row" : "column"}
+            justify={matchesSM ? "space-evenly" : "space-around"}
+            alignItems="center"
+          >
+            <Grid item>
+              <Card className={classes.card}>
+                <CardActionArea component={Link} to="/integration-capabilities">
+                  <CardMedia
+                    className={classes.media}
+                    image={capabilities}
+                    title="Integration Capabilities"
+                  />
+                  <CardContent>
+                    <Typography variant="h6" align="center">
+                      Integration Capabilities
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+            <Grid item>
+              <Card className={classes.card}>
+                <CardActionArea component={Link} to="/technical-implementation">
+                  <CardMedia
+                    className={classes.media}
+                    image={implementation}
+                    title="Technical Implementation"
+                  />
+                  <CardContent>
+                    <Typography variant="h6" align="center">
+                      Technical Implementation
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+            <Grid item>
+              <Card className={classes.card}>
+                <CardActionArea component={Link} to="/customer-maturity">
+                  <CardMedia
+                    className={classes.media}
+                    image={customer}
+                    title="Technical Implementation"
+                  />
+                  <CardContent>
+                    <Typography variant="h6" align="center">
+                      Customer Maturity
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </React.Fragment>
   );
 };
